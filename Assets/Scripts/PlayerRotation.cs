@@ -9,7 +9,7 @@ public class PlayerRotation : MonoBehaviour
 
     void Start()
     {
-        rb = GetComponent<Rigidbody>();   
+        rb = GetComponent<Rigidbody>();
     }
 
     void OnLookLeft() => LookLeft();
