@@ -34,7 +34,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 128
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -72,7 +72,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -97,35 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Addet
+      name: Addet Sprite Sheet_7
       rect:
         serializedVersion: 2
-        x: 0
-        y: 10
-        width: 90
-        height: 95
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 573aa2a2004e47c4f99105313372e6a1
-      internalID: -348305911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Addet Sprite Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 114
-        y: 14
-        width: 83
-        height: 94
+        x: 736
+        y: 0
+        width: 100
+        height: 108
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,15 +119,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Addet Sprite Sheet_2
+      name: Addet Sprite Sheet_0
       rect:
         serializedVersion: 2
-        x: 222
+        x: 635
         y: 1
-        width: 85
-        height: 102
+        width: 97
+        height: 107
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -163,15 +141,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Addet Sprite Sheet_3
+      name: Addet Sprite Sheet_4
       rect:
         serializedVersion: 2
-        x: 328
+        x: 430
         y: 0
-        width: 92
-        height: 96
+        width: 98
+        height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -185,15 +163,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Addet Sprite Sheet_4
+      name: Addet Sprite Sheet_5
       rect:
         serializedVersion: 2
-        x: 432
-        y: 10
-        width: 90
-        height: 95
+        x: 533
+        y: 0
+        width: 94
+        height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -207,15 +185,15 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Addet Sprite Sheet_5
+      name: Addet Sprite Sheet_1
       rect:
         serializedVersion: 2
-        x: 539
-        y: 14
-        width: 85
-        height: 94
+        x: 104
+        y: 0
+        width: 98
+        height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -232,12 +210,12 @@ TextureImporter:
       name: Addet Sprite Sheet_6
       rect:
         serializedVersion: 2
-        x: 639
-        y: 1
-        width: 92
-        height: 102
+        x: 0
+        y: 0
+        width: 97
+        height: 108
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -251,13 +229,35 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Addet Sprite Sheet_7
+      name: Addet Sprite Sheet_2
       rect:
         serializedVersion: 2
-        x: 738
+        x: 210
+        y: 0
+        width: 105
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 3, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10882c67b50afb4a872121cb45211f2
+      internalID: -205663040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Addet Sprite Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 323
         y: 0
         width: 99
-        height: 96
+        height: 106
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +266,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e10882c67b50afb4a872121cb45211f2
-      internalID: -205663040
+      spriteID: c9d9d4e12aaf09845aa41e89b2f3a24b
+      internalID: 1618290076
       vertices: []
       indices: 
       edges: []
@@ -289,6 +289,7 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Addet: -348305911
+      Addet Sprite Sheet_0: 1618290076
       Addet Sprite Sheet_1: 1461519270
       Addet Sprite Sheet_2: -731804167
       Addet Sprite Sheet_3: 1492809101
