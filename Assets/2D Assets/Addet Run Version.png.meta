@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1d3b380dd6fdd554192f1ca5fd99ed86
+guid: e3a06210e2556ae4b89b332b02b80fb0
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,7 +48,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -97,10 +97,76 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Addet Sprite Sheet_7
+      name: Addet Run Version_0
       rect:
         serializedVersion: 2
-        x: 736
+        x: 0
+        y: 0
+        width: 102
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4d6c7001c6080548ad4288e4b233f74
+      internalID: -513518089
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Addet Run Version_1
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 0
+        width: 106
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46e8a6f74eb2cb243916693a097a8d37
+      internalID: 1228714071
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Addet Run Version_2
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 0
+        width: 104
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 955f6bc2f66c36343a56043c9e2fdf36
+      internalID: 1775227300
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Addet Run Version_3
+      rect:
+        serializedVersion: 2
+        x: 329
         y: 0
         width: 100
         height: 108
@@ -112,152 +178,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 996ed3fd5b39df946ad8e2478368d4de
-      internalID: 1461519270
+      spriteID: 00b4b4584b468364ba80a7d59e32ee6e
+      internalID: -399085526
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Addet Sprite Sheet_0
+      name: Addet Run Version_4
       rect:
         serializedVersion: 2
-        x: 635
-        y: 1
-        width: 97
-        height: 107
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3c6b3a5fe9e8d2c43a51583f739a4cef
-      internalID: -731804167
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Addet Sprite Sheet_4
-      rect:
-        serializedVersion: 2
-        x: 430
+        x: 433
         y: 0
-        width: 98
+        width: 104
         height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cbb856c373d11cc40b96fadbe0671f88
-      internalID: 1492809101
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Addet Sprite Sheet_5
-      rect:
-        serializedVersion: 2
-        x: 533
-        y: 0
-        width: 94
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 027b46269a78c964ca61a27af4086ae6
-      internalID: 1038294090
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Addet Sprite Sheet_1
-      rect:
-        serializedVersion: 2
-        x: 104
-        y: 0
-        width: 98
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9b56a0d26cf3c7748ab5b5966046b030
-      internalID: -611999835
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Addet Sprite Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 97
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b0ac6632656af9f45af47e776b0cfd39
-      internalID: 1257725078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Addet Sprite Sheet_2
-      rect:
-        serializedVersion: 2
-        x: 210
-        y: 0
-        width: 105
-        height: 108
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 3, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e10882c67b50afb4a872121cb45211f2
-      internalID: -205663040
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Addet Sprite Sheet_3
-      rect:
-        serializedVersion: 2
-        x: 323
-        y: 0
-        width: 99
-        height: 106
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -266,8 +200,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9d9d4e12aaf09845aa41e89b2f3a24b
-      internalID: 1618290076
+      spriteID: 064bd41fb0e6699488720068d3c4faff
+      internalID: 70656774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Addet Run Version_5
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 0
+        width: 95
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 361be531ad2974d4ba0febd7515c8d5e
+      internalID: 1274659711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Addet Run Version_6
+      rect:
+        serializedVersion: 2
+        x: 641
+        y: 0
+        width: 98
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44eb322b05d410848b6e01c662819ffb
+      internalID: 1762077274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Addet Run Version_7
+      rect:
+        serializedVersion: 2
+        x: 742
+        y: 0
+        width: 106
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47a3f9818d050654fb090914656cab4f
+      internalID: -391078463
       vertices: []
       indices: 
       edges: []
@@ -276,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 465ef0c7cae68e04c9944d27f6b82b9d
+    spriteID: 6b8090c67e05c4840ae59e610bc994fe
     internalID: 0
     vertices: []
     indices: 
@@ -288,15 +288,14 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      Addet: -348305911
-      Addet Sprite Sheet_0: 1618290076
-      Addet Sprite Sheet_1: 1461519270
-      Addet Sprite Sheet_2: -731804167
-      Addet Sprite Sheet_3: 1492809101
-      Addet Sprite Sheet_4: 1038294090
-      Addet Sprite Sheet_5: -611999835
-      Addet Sprite Sheet_6: 1257725078
-      Addet Sprite Sheet_7: -205663040
+      Addet Run Version_0: -513518089
+      Addet Run Version_1: 1228714071
+      Addet Run Version_2: 1775227300
+      Addet Run Version_3: -399085526
+      Addet Run Version_4: 70656774
+      Addet Run Version_5: 1274659711
+      Addet Run Version_6: 1762077274
+      Addet Run Version_7: -391078463
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
