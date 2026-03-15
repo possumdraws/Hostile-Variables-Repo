@@ -1,6 +1,6 @@
 using System.Collections;
 using Unity.VisualScripting;
-using UnityEditor.ShaderGraph.Internal;
+//using UnityEditor.ShaderGraph.Internal;
 using UnityEngine;
 
 public class SpawnEnemy : MonoBehaviour
@@ -29,8 +29,6 @@ public class SpawnEnemy : MonoBehaviour
         {
             //This just means that it wont activate until the yield is complete
             StartCoroutine(Spawn());
-            //add so it stops spawning enemies eventually
-            spawned++;
         }
         
     }
@@ -44,7 +42,10 @@ public class SpawnEnemy : MonoBehaviour
         yield return new WaitForSeconds(3f);
         //spawned enemy = Instantiate(addet prefab, spawner gameobject pos, rot)
         spawnedAddetEnemy = Instantiate(addetEnemy, spawnerPosition.position, spawnerPosition.rotation);
-        
+
+        //add so it stops spawning enemies eventually
+        spawned++;
+
         canSpawn = false;
     }
 }
