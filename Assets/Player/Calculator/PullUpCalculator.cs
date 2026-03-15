@@ -46,6 +46,10 @@ public class PullUpCalculator : MonoBehaviour
 
     void Update()
     {
+        if (CheckIsPaused.paused) 
+        { 
+            return; 
+        }
         //bool is attached to if we are holding right click
         bool holdingRightClick = Input.GetMouseButton(1);
 
