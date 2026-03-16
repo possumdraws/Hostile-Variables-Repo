@@ -10,7 +10,9 @@ public class SpawnEnemy : MonoBehaviour
     public GameObject addetEnemy;
     private GameObject spawnedAddetEnemy;
     private bool canSpawn;
+    [SerializeField]
     private int spawned = 0;
+
     [Header("How Many Can Spawn Before it Stops")]
     public int maxSpawned = 5;
 
@@ -21,7 +23,7 @@ public class SpawnEnemy : MonoBehaviour
         spawnerPosition = transform;
     }
 
-    // Update is called 60x per second
+    // Update is called every frame
     void Update()
     {
         //if the in game enemy exists, we cannot spawn another one.
@@ -40,6 +42,13 @@ public class SpawnEnemy : MonoBehaviour
 
         //wait for however many seconds we set this to (I did 3 for now)
         yield return new WaitForSeconds(3f);
+
+        //check that enemy prefab exists
+        if(addetEnemy == null)
+        {
+            Debug.LogError("Enemy prefab is missing");
+            yield break;
+        }
         //spawned enemy = Instantiate(addet prefab, spawner gameobject pos, rot)
         spawnedAddetEnemy = Instantiate(addetEnemy, spawnerPosition.position, spawnerPosition.rotation);
 
