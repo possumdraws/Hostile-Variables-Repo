@@ -1,3 +1,4 @@
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,6 +21,9 @@ public class PauseMenuButtons : MonoBehaviour
     }
     public void QuitGameButton()
     {
+        //qquit editor play mode
+        EditorApplication.isPlaying = false;
+        //close built application
         Application.Quit();
     }
 }

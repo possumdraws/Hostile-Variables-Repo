@@ -365,13 +365,13 @@ GameObject:
   - component: {fileID: 8404929622630587626}
   - component: {fileID: 5650231785644583462}
   - component: {fileID: 2842423425431057283}
-  - component: {fileID: 3298093712468989701}
   - component: {fileID: 5973524569754735622}
-  - component: {fileID: 8213175150980624269}
   - component: {fileID: 4251817922814288413}
+  - component: {fileID: 8213175150980624269}
   - component: {fileID: 276119555215737141}
+  - component: {fileID: -1764922731608316141}
   m_Layer: 0
-  m_Name: AddetMoving
+  m_Name: Addet_Heavy
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -474,23 +474,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3298093712468989701
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9194902376921693633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb4af6b059a3f047b798c4200cff7c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyProblem
-  a: 0
-  b: 0
-  answer: 0
-  operationTypeNum: 0
-  problemText: {fileID: 2368856232129643001}
 --- !u!54 &5973524569754735622
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -518,19 +501,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &8213175150980624269
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9194902376921693633}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f45299a835801044a68ea8e07901f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteLookAtCamera
-  player: {fileID: 0}
 --- !u!65 &4251817922814288413
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -552,6 +522,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.9090998, y: 0.9602685, z: 0.2}
   m_Center: {x: -0.02291907, y: 0.036213625, z: -2.4581066e-11}
+--- !u!114 &8213175150980624269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194902376921693633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f45299a835801044a68ea8e07901f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteLookAtCamera
+  player: {fileID: 0}
 --- !u!114 &276119555215737141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -566,3 +549,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
   playerTarget: {fileID: 0}
   enemyMoveSpeed: 0.5
+--- !u!114 &-1764922731608316141
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194902376921693633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5f3e9ddf6563d74497447fceb4e25f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyProblem_Heavy
+  a: 0
+  b: 0
+  c: 0
+  answer: 0
+  operationTypeNum: 0
+  problemText: {fileID: 2368856232129643001}
