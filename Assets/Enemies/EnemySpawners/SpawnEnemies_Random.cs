@@ -22,18 +22,20 @@ public class SpawnEnemies_Random : MonoBehaviour
         //get location of this spawner in the world
         spawnerPosition = transform;
 
-        pickEnemy = Random.Range(0, basicEnemies.Length);
     }
 
     // Update is called every frame
     void FixedUpdate()
     {
+        pickEnemy = Random.Range(0, basicEnemies.Length);
+
         //if the in game enemy exists, we cannot spawn another one.
         if (spawnedAddetEnemy == null && maxSpawned > spawned && !canSpawn)
         {
             //This just means that it wont activate until the yield is complete
             StartCoroutine(Spawn());
         }
+
 
     }
 
