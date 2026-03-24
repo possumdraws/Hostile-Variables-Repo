@@ -82,7 +82,7 @@ public class PullUpCalculator : MonoBehaviour
         if (cameraLook != null)
             cameraLook.enabled = !hrc;
 
-        Cursor.visible = hrc;//cursor visibility is attached to the 
-        Cursor.lockState = hrc ? CursorLockMode.Confined : CursorLockMode.Locked;
+        //Cursor.visible = hrc;//cursor visibility is attached to the 
+        //Cursor.lockState = hrc ? CursorLockMode.Confined : CursorLockMode.Locked;
     }
 }

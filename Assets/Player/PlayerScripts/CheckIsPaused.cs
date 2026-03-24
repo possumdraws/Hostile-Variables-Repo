@@ -41,8 +41,8 @@ public class CheckIsPaused : MonoBehaviour
             pauseMenuCanvas.SetActive(true);
         }
         paused = true;
-        Cursor.visible = paused;
-        Cursor.lockState = CursorLockMode.None;
+        //Cursor.visible = paused;
+        //Cursor.lockState = CursorLockMode.None;
     }
 
     //Resume
@@ -55,7 +55,7 @@ public class CheckIsPaused : MonoBehaviour
             pauseMenuCanvas.SetActive(false);
         }
         paused = false;
-        Cursor.visible = paused;
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.visible = paused;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 }
