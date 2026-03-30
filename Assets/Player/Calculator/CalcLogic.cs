@@ -3,7 +3,7 @@ using TMPro;
 public class CalcLogic : MonoBehaviour
 {
     //so we can't shoot while using the menu
-    bool canBlast = true;
+    private bool canBlast = true;
 
     //SFX
     public AudioSource laserBlast;
@@ -22,23 +22,19 @@ public class CalcLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if holding right click, we cannot shoot
-        canBlast = !Input.GetMouseButton(1);
-
-        //if we press left click, but not right click at the same time we can shoot
-        /*if (Input.GetMouseButtonDown(0) && canBlast)
+        //cannot shoot while calculator is toggled
+        if (Input.GetMouseButtonDown(1))
         {
-            laserBlast.Play();//laser SFX
-            if (calculatorUI.enteredValue == generateAdd.calculatedAnswer)
-            {
-                destroyEnemy.RayDestroy();//destroy enemy
-            }
-        }*/
+            //flip to true, and then back on another press
+            canBlast = !canBlast;
+        }
+
+        //if nesting sadly
         if (Input.GetMouseButtonDown(0) && canBlast)
         {
             laserBlast.Play();
 
-            // Cast a ray to see which enemy was clicked
+            //cast a ray to see which enemy was clicked
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out RaycastHit hit)&& hit.collider.CompareTag("enemy"))
             {

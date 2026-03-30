@@ -17,7 +17,7 @@ public class DisplayEnemyProblemOnHover : MonoBehaviour
         if (detectEnemy == null)
         {
             detectEnemy = Object.FindFirstObjectByType<DetectEnemy>();
-        } 
+        }
     }
 
     // Update is called once per frame
@@ -29,10 +29,11 @@ public class DisplayEnemyProblemOnHover : MonoBehaviour
         Ray ray = detectEnemy.CalibrateRayCast();
         if(Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("enemy"))
         {
-            EnemyProblem enemyproblem = hit.collider.GetComponent<EnemyProblem>();
-            if (enemyproblem != null)
+            EnemyProblem enemyProblem = hit.collider.GetComponent<EnemyProblem>();
+            
+            if (enemyProblem != null)
             {
-                calculatorPlaceholder.text = enemyproblem.problemText.text;
+                calculatorPlaceholder.text = enemyProblem.problemText.text;
             }
             else
             {

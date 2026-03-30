@@ -19,13 +19,13 @@ public class RotateCamera : MonoBehaviour
             LookLeft();
         }
 
-        if (Input.GetKeyUp(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             LookRight();
         }
     }
 
-    void LookLeft()
+    public void LookLeft()
     {
         if (rb != null)
         {
@@ -37,7 +37,7 @@ public class RotateCamera : MonoBehaviour
         }
     }
 
-    void LookRight()
+    public void LookRight()
     {
         if (rb != null)
         {

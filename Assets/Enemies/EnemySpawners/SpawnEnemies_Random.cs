@@ -8,8 +8,10 @@ public class SpawnEnemies_Random : MonoBehaviour
     public GameObject[] basicEnemies;
     public GameObject[] heavyEnemies;
     private int pickEnemy;
+    private bool pickEnemyType;
     private GameObject spawnedAddetEnemy;
     private bool canSpawn;
+
     [SerializeField]
     private int spawned = 0;
 
@@ -21,44 +23,83 @@ public class SpawnEnemies_Random : MonoBehaviour
     {
         //get location of this spawner in the world
         spawnerPosition = transform;
-
     }
 
     // Update is called every frame
     void FixedUpdate()
     {
-        pickEnemy = Random.Range(0, basicEnemies.Length);
-
         //if the in game enemy exists, we cannot spawn another one.
         if (spawnedAddetEnemy == null && maxSpawned > spawned && !canSpawn)
         {
             //This just means that it wont activate until the yield is complete
             StartCoroutine(Spawn());
         }
-
-
     }
 
     //IEnumerator is just unity stuff for delays. its a return type
     IEnumerator Spawn()
     {
+        //can spawn enabled when called
         canSpawn = true;
+        //random value for picking type of enemy
+        pickEnemyType = (Random.value < 0.9f); //% basic
 
         //wait for however many seconds we set this to (I did 3 for now)
         yield return new WaitForSeconds(3f);
 
-        //check that enemy prefab exists
-        if (basicEnemies[pickEnemy] == null)
+        //spawned enemy = Instantiate(prefab, spawner gameobject pos, rotation)
+        if (pickEnemyType)
         {
-            Debug.LogError("Enemy prefab is missing");
-            yield break;
+            if (basicEnemies.Length == 0)
+            {
+                Debug.LogError("Basic enemy array is empty!");
+                canSpawn = false;
+                yield break;
+            }
+
+            //generate random value
+            pickEnemy = Random.Range(0, basicEnemies.Length);
+
+            //check that enemy prefab exists
+            if (basicEnemies[pickEnemy] == null)
+            {
+                Debug.LogError("Enemy prefab is missing");
+                canSpawn = false;
+                yield break;
+            }
+
+            //Instantiate
+            spawnedAddetEnemy = Instantiate(basicEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
         }
-        //spawned enemy = Instantiate(addet prefab, spawner gameobject pos, rot)
-        spawnedAddetEnemy = Instantiate(basicEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
+        else
+        {
+            if (heavyEnemies.Length == 0)
+            {
+                Debug.LogError("Heavy enemy array is empty!");
+                canSpawn = false;
+                yield break;
+            }
+
+            //generate random value
+            pickEnemy = Random.Range(0, heavyEnemies.Length);
+
+            //check that enemy prefab exists
+            if (heavyEnemies[pickEnemy] == null)
+            {
+                Debug.LogError("Enemy prefab is missing");
+                canSpawn = false;
+                yield break;
+            }
+
+            //Instantiate
+            spawnedAddetEnemy = Instantiate(heavyEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
+
+        }
 
         //add so it stops spawning enemies eventually
         spawned++;
 
+        //cannot spawn until called again
         canSpawn = false;
     }
 }

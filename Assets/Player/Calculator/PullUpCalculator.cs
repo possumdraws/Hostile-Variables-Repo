@@ -16,6 +16,7 @@ public class PullUpCalculator : MonoBehaviour
     [Header("References")]
     public MonoBehaviour cameraLook;// FPcam object with camera movement script
     public Canvas calculatorCanvas;//calculator canvas
+    public Canvas rotationButtons; //rotationButtons canvas
 
     [Header("Offhand Positions/Rotations")]
     public Vector3 offhandPosition = new Vector3(0.35f, -0.3f, 0.5f);
@@ -27,6 +28,8 @@ public class PullUpCalculator : MonoBehaviour
 
     [Header("ADS Speed")]
     public float moveSpeed;//pull up speed
+
+    bool calcUp = false;
     #endregion
 
     private GraphicRaycaster raycaster;
@@ -39,8 +42,13 @@ public class PullUpCalculator : MonoBehaviour
         //calculator UI is always on
         calculatorCanvas.gameObject.SetActive(true);
 
+        //rotationButtons
+        rotationButtons.gameObject.SetActive(true);
 
+        //base positioning
         transform.localPosition = offhandPosition;
+
+        //cannot interact in offhand
         SetInteractable(false);
     }
 
@@ -50,37 +58,43 @@ public class PullUpCalculator : MonoBehaviour
         { 
             return; 
         }
-        //bool is attached to if we are holding right click
-        bool holdingRightClick = Input.GetMouseButton(1);
+
+        //bool is attached right click
+        if (Input.GetMouseButtonDown(1))
+        {
+            //flip to true, and then back on another press
+            calcUp = !calcUp;
+            rotationButtons.gameObject.SetActive(!calcUp);
+        }
 
         //movement&rotation of calculator
-        MoveCalcPos(holdingRightClick);
-        RotateCalcPos(holdingRightClick);
+        MoveCalcPos(calcUp);
+        RotateCalcPos(calcUp);
 
         //interaction is attached to holdingRightClick bool
-        SetInteractable(holdingRightClick);
+        SetInteractable(calcUp);
     }
-    void MoveCalcPos(bool hrc)
+    void MoveCalcPos(bool rc)
     {
         //smoothly move calculator
-        Vector3 targetPos = hrc ? pulledUpPosition : offhandPosition;
+        Vector3 targetPos = rc ? pulledUpPosition : offhandPosition;
         transform.localPosition = Vector3.Lerp(transform.localPosition, targetPos, Time.deltaTime * moveSpeed);
     }
-    void RotateCalcPos(bool hrc)
+    void RotateCalcPos(bool rc)
     {
         //smoothly rotate calculator
-        Vector3 targetEuler = hrc ? pulledUpRotation : offhandRotation;
+        Vector3 targetEuler = rc ? pulledUpRotation : offhandRotation;
         transform.localEulerAngles = Vector3.Lerp(transform.localEulerAngles, targetEuler, Time.deltaTime * moveSpeed);
     }
-    void SetInteractable(bool hrc)//hrc = holdingRightCLick
+    void SetInteractable(bool rc)//hrc = holdingRightCLick
     {
         //if raycaster is active, hrc is true
         if (raycaster != null)
-            raycaster.enabled = hrc;
+            raycaster.enabled = rc;
 
         //if cameraLook is active, hrc is false
         if (cameraLook != null)
-            cameraLook.enabled = !hrc;
+            cameraLook.enabled = !rc;
 
         //Cursor.visible = hrc;//cursor visibility is attached to the 
         //Cursor.lockState = hrc ? CursorLockMode.Confined : CursorLockMode.Locked;
