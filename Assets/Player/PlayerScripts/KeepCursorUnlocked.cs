@@ -11,12 +11,16 @@ public class KeepCursorUnlocked : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Ensure the cursor is always unlocked and visible
+        //ensure cursor is always unlocked and visible
         if (Cursor.lockState != CursorLockMode.None)
+        {
             Cursor.lockState = CursorLockMode.None;
+        }
 
         if (!Cursor.visible)
+        {
             Cursor.visible = true;
+        }
     }
 
     void OnApplicationFocus(bool hasFocus)

@@ -1,10 +1,12 @@
+using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using System.Linq;
 
 public class EnemyProblem : MonoBehaviour
 {
     [Header("VARIABLES")]
-    public int a, b;
+    public int a, b, c;
     public int answer;
 
     [Header("OPERATOR ASSIGNMENT\n0 = + | 1 = - | 2 = ×|3 = ÷")]
@@ -15,6 +17,10 @@ public class EnemyProblem : MonoBehaviour
      * 2 => Multiplication
      * 3 => Division
      */
+
+    [Header("ENEMY TYPE ASSIGNMENT\n0 = BASIC | 1 = HEAVY")]
+    public int enemyTypeAssignment;
+
     string operationTypeSymbol;//is assigned in Start() switch
 
     public TextMeshProUGUI problemText; //ref to TMP text
@@ -45,26 +51,44 @@ public class EnemyProblem : MonoBehaviour
 
     //================> SET TEXT <================\\
     void SetProblemTextAndOperator()
-    {   
+    {
         //if TMP text exists (assigned in inspector)
-        if (problemText != null)
+        if (enemyTypeAssignment == 0 && problemText != null)
         {
             problemText.text = $"{a} {operationTypeSymbol} {b} = {answer}?";
+        }
+        if (enemyTypeAssignment == 1 && problemText != null)
+        {
+            problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = {answer}?";
         }
     }
 
 
     //================> PROBLEM GENERATION <================\\
-    
-    //==> ADDITION <==\\
+
+        //==> ADDITION <==\\
     public void GenerateAddProblem()
     {
         //generate random numbers
         a = Random.Range(1, 101);
         b = Random.Range(1, 101);
+        
+        //basic gen
+        if (enemyTypeAssignment == 0)
+        {
+            //calculate answer
+            answer = a + b;
+        }
 
-        //calculate answer
-        answer = a + b;
+        //heavy gen
+        if(enemyTypeAssignment == 1)
+        {
+            //generate 3rd var for heavy enemies
+            c = Random.Range(1, 101);
+            
+            //calculate heavy answer
+            answer = a + b + c;
+        }
     }
 
     //==> SUBTRACTION <==\\
@@ -82,31 +106,116 @@ public class EnemyProblem : MonoBehaviour
             //b and a have been swapped.
         }
 
-        //calculate
-        answer = a - b;
+        //basic gen
+        if (enemyTypeAssignment == 0)
+        {
+            //calculate
+            answer = a - b;
+        }
+
+        //heavy gen
+        if (enemyTypeAssignment == 1)
+        {
+            //set temp answer to make sure that c is lower than it
+            int firstAnswer = a - b;
+            //handle firstAnswer being 0
+            if (firstAnswer == 0)
+            {
+                c = 0;
+            }
+            else
+            {
+                //if firstAnswer = 12, answer will be between 0-12 
+                c = Random.Range(1, firstAnswer + 1);
+            }
+
+            //calculate
+            answer = a - b - c;
+        }
     }
 
     //==> MULTIPLICATION <==\\
     public void GenerateMultiProblem()
     {
-        //lower numbers to keep the multiplication fair
-        a = Random.Range(1, 15);
-        b = Random.Range(1, 15);
+        //basic gen
+        if (enemyTypeAssignment == 0)
+        {
+            //lower numbers to keep the multiplication fair
+            a = Random.Range(1, 15);
+            b = Random.Range(1, 15);
 
-        answer = a * b;
+            //calculate
+            answer = a * b;
+        }
+
+        //heavy gen
+        if (enemyTypeAssignment == 1)
+        {
+            //lower numbers to keep the multiplication fair
+            a = Random.Range(1, 6);
+            b = Random.Range(1, 6);
+            c = Random.Range(1, 6);
+
+            answer = a * b * c;
+        }
     }
 
     //==> DIVISION <==\\
     public void GenerateDivProblem()
     {
-        //divisor
-        b = Random.Range(1, 20);
+        //basic gen
+        if (enemyTypeAssignment == 0)
+        {
+            //divisor
+            b = Random.Range(1, 20);
 
-        //make -a- (the dividend) a multiple of -b- (divisor)
-        int sureIntQuotient = Random.Range(1, 10);
-        a = b * sureIntQuotient;
+            //make -a- (the dividend) a multiple of -b- (divisor)
+            int sureIntQuotient = Random.Range(1, 10);
+            a = b * sureIntQuotient;
 
-        answer = a / b;
+            answer = a / b;
+        }
+
+        //heavy gen
+        if(enemyTypeAssignment == 1)
+        {
+            //divisor
+            b = Random.Range(2, 6);
+
+            //make -a- (the dividend) a multiple of -b- (divisor)
+            int sureIntQuotient = Random.Range(1, 10);
+            a = b * sureIntQuotient * 2;
+
+            //check first calculation
+            int firstAnswer = a / b;
+
+            //list to store good divisors
+            List<int> divisors = new List<int>();
+
+            //find divisors and add to the list
+            for (int i = 1; i <= firstAnswer; i++)
+            {
+                if (firstAnswer % i == 0)
+                { divisors.Add(i); }
+            }
+
+            //filter out EX: 5/5, 5/1, etc
+            divisors = divisors.Where(x => x != 1 && x != firstAnswer).ToList();
+
+
+            //if no divisors were found, c == 1
+            if (divisors.Count == 0)
+            {
+                c = 1;
+            }
+            else
+            {
+                c = divisors[Random.Range(0, divisors.Count)];
+            }
+
+            //calculate final answer
+            answer = firstAnswer / c;
+        }
     }
 
 }
