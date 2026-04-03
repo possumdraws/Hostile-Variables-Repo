@@ -49,6 +49,6 @@ MonoBehaviour:
   - {fileID: 555397192759081915, guid: 228f8cbe8240c0f4a829d74879e1bea6, type: 3}
   heavyEnemies:
   - {fileID: 555397192759081915, guid: 7f59dfbec947c684b9420c6081aeaa10, type: 3}
-  - {fileID: 555397192759081915, guid: 7f59dfbec947c684b9420c6081aeaa10, type: 3}
+  - {fileID: 4339877262483294522, guid: 86fd513c304053d479ea2f534a6e37c7, type: 3}
   spawned: 0
   maxSpawned: 5
