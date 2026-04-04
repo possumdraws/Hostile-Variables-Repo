@@ -3,6 +3,15 @@ using UnityEngine;
 //use this on 2d assets that need to face the player. text, sprites, etc.
 public class LookAtPlayer : MonoBehaviour
 {
+    /*
+    public Transform cam;
+    
+    void LateUpdate()
+    {
+        transform.LookAt(transform.position + cam.forward);
+    }
+    */ 
+
     private Transform trans;
     private Vector3 offset = new Vector3(0, 180, 0);
 
