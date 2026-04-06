@@ -44,5 +44,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2d73b8c1cf7e68d4198c9e375d264e98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::SpawnEnemy
-  addetEnemy: {fileID: 0}
+  addetEnemy: {fileID: 9194902376921693633, guid: 54f71748a9ecc1744917ec8b2e622b20, type: 3}
+  spawned: 0
   maxSpawned: 5

@@ -13,6 +13,8 @@ public class SpawnEnemy : MonoBehaviour
     [SerializeField]
     private int spawned = 0;
 
+    public float spawnDelay;
+
     [Header("How Many Can Spawn Before it Stops")]
     public int maxSpawned = 5;
 
@@ -21,7 +23,7 @@ public class SpawnEnemy : MonoBehaviour
     {
         //get location of this spawner in the world
         spawnerPosition = transform;
-    }
+}
 
     // Update is called every frame
     void Update()
@@ -29,6 +31,7 @@ public class SpawnEnemy : MonoBehaviour
         //if the in game enemy exists, we cannot spawn another one.
         if (spawnedAddetEnemy == null && maxSpawned > spawned && !canSpawn)
         {
+            spawnDelay = Random.Range(1f, 5f);
             //This just means that it wont activate until the yield is complete
             StartCoroutine(Spawn());
         }
@@ -41,7 +44,7 @@ public class SpawnEnemy : MonoBehaviour
         canSpawn = true;
 
         //wait for however many seconds we set this to (I did 3 for now)
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(spawnDelay);
 
         //check that enemy prefab exists
         if(addetEnemy == null)

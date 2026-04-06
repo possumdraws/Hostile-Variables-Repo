@@ -62,9 +62,7 @@ public class PullUpCalculator : MonoBehaviour
         //bool is attached right click
         if (Input.GetMouseButtonDown(1))
         {
-            //flip to true, and then back on another press
-            calcUp = !calcUp;
-            rotationButtons.gameObject.SetActive(!calcUp);
+            FlipCalc();
         }
 
         //movement&rotation of calculator
@@ -73,6 +71,12 @@ public class PullUpCalculator : MonoBehaviour
 
         //interaction is attached to holdingRightClick bool
         SetInteractable(calcUp);
+    }
+    public void FlipCalc()
+    {
+        //flip to true, and then back on another press
+        calcUp = !calcUp;
+        rotationButtons.gameObject.SetActive(!calcUp);
     }
     void MoveCalcPos(bool rc)
     {

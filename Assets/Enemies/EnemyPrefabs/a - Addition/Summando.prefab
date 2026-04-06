@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 2350150602863912589}
   - component: {fileID: 9201825346215384239}
   - component: {fileID: 5122557993924179723}
+  - component: {fileID: 8673924147475489764}
   m_Layer: 0
   m_Name: Summando
   m_TagString: enemy
@@ -193,8 +194,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f152c7339f207b341b6874b43027aaef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
-  playerTarget: {fileID: 0}
-  enemyMoveSpeed: 0.5
 --- !u!114 &5122557993924179723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +213,21 @@ MonoBehaviour:
   operationTypeNum: 0
   enemyTypeAssignment: 1
   problemText: {fileID: 2951052184276267887}
+--- !u!114 &8673924147475489764
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555397192759081915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b752d80fbb7b7249b26db8f8b3c6337, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
+  currentRow: 0
+  currentIndex: 0
+  speed: 2
 --- !u!1 &6272895136000892783
 GameObject:
   m_ObjectHideFlags: 0

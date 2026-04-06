@@ -2,10 +2,16 @@ using System.Collections;
 using UnityEngine;
 
 public class EnemyMove : MonoBehaviour
-{
+{/*
+  * 
+  //TEMPORARILY TURNED OFF TO WORK ON NEW MOVEMENT SYSTEM
     public Transform playerTarget;
     public float enemyMoveSpeed = 10f;
-    private bool moving = true;
+
+    [HideInInspector]
+    public bool moving = true;
+
+
     //public float stopDistance = 0.5f; // distance when to stop (will implement later
     //maybe it will be attack distance? longer for ranged enemies, shorter for melee? idk)
     void Start()
@@ -43,5 +49,5 @@ public class EnemyMove : MonoBehaviour
             //flip
             moving = !moving;
         }
-    }
+    }*/
 }

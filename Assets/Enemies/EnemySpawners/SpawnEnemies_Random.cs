@@ -12,6 +12,8 @@ public class SpawnEnemies_Random : MonoBehaviour
     private GameObject spawnedAddetEnemy;
     private bool canSpawn;
 
+    public float spawnDelay;
+
     [SerializeField]
     private int spawned = 0;
 
@@ -39,13 +41,14 @@ public class SpawnEnemies_Random : MonoBehaviour
     //IEnumerator is just unity stuff for delays. its a return type
     IEnumerator Spawn()
     {
+        spawnDelay = Random.Range(1f, 5f);
         //can spawn enabled when called
         canSpawn = true;
         //random value for picking type of enemy
         pickEnemyType = (Random.value < 0.9f); //% basic
 
         //wait for however many seconds we set this to (I did 3 for now)
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(spawnDelay);
 
         //spawned enemy = Instantiate(prefab, spawner gameobject pos, rotation)
         if (pickEnemyType)

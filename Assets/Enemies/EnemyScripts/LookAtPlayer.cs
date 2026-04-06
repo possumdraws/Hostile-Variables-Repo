@@ -24,7 +24,7 @@ public class LookAtPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         //keep view on camera
         transform.LookAt(trans);

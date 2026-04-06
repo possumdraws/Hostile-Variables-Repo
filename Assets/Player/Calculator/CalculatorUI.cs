@@ -16,8 +16,13 @@ public class CalculatorUI : MonoBehaviour
     //SFX
     public AudioSource ButtonClick;
 
+    PullUpCalculator pullUpCalculator;
+    CalcLogic calcLogic;
+
     void Start()
     {
+        calcLogic = GameObject.FindFirstObjectByType<CalcLogic>();
+
         if (inputField == null)
         {
             Debug.LogError("InputField is not assigned!");
@@ -72,6 +77,7 @@ public class CalculatorUI : MonoBehaviour
 
         //clear after enter
         inputField.text = "";
+
     }
 
     //deletes the last character from the input field
