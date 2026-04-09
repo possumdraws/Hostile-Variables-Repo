@@ -9,7 +9,7 @@ public class SpawnEnemies_Random : MonoBehaviour
     public GameObject[] heavyEnemies;
     private int pickEnemy;
     private bool pickEnemyType;
-    private GameObject spawnedAddetEnemy;
+    private GameObject spawnedEnemy;
     private bool canSpawn;
 
     public float spawnDelay;
@@ -31,7 +31,7 @@ public class SpawnEnemies_Random : MonoBehaviour
     void FixedUpdate()
     {
         //if the in game enemy exists, we cannot spawn another one.
-        if (spawnedAddetEnemy == null && maxSpawned > spawned && !canSpawn)
+        if (spawnedEnemy == null && maxSpawned > spawned && !canSpawn)
         {
             //This just means that it wont activate until the yield is complete
             StartCoroutine(Spawn());
@@ -72,7 +72,7 @@ public class SpawnEnemies_Random : MonoBehaviour
             }
 
             //Instantiate
-            spawnedAddetEnemy = Instantiate(basicEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
+            spawnedEnemy = Instantiate(basicEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
         }
         else
         {
@@ -95,8 +95,7 @@ public class SpawnEnemies_Random : MonoBehaviour
             }
 
             //Instantiate
-            spawnedAddetEnemy = Instantiate(heavyEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
-
+            spawnedEnemy = Instantiate(heavyEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
         }
 
         //add so it stops spawning enemies eventually

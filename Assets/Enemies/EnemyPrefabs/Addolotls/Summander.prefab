@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 5378836408880981039}
   - component: {fileID: 2198956915388225889}
   - component: {fileID: 2010670155128939029}
-  - component: {fileID: 6365059797140273107}
   - component: {fileID: 6323816223704569278}
-  - component: {fileID: 5153951114654609655}
   - component: {fileID: 2350150602863912589}
+  - component: {fileID: 6365059797140273107}
+  - component: {fileID: 5153951114654609655}
   - component: {fileID: 9201825346215384239}
   - component: {fileID: 7573451010474411774}
   m_Layer: 0
@@ -121,25 +121,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6365059797140273107
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555397192759081915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4cb4af6b059a3f047b798c4200cff7c6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyProblem
-  a: 0
-  b: 0
-  c: 0
-  answer: 0
-  operationTypeNum: 0
-  enemyTypeAssignment: 0
-  problemText: {fileID: 2951052184276267887}
 --- !u!54 &6323816223704569278
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -163,23 +144,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5153951114654609655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555397192759081915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f45299a835801044a68ea8e07901f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteLookAtCamera
-  player: {fileID: 0}
 --- !u!65 &2350150602863912589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -199,9 +167,9 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9090998, y: 1.2345761, z: 0.2}
-  m_Center: {x: -0.022919057, y: -0.032202452, z: 6.100054e-11}
---- !u!114 &9201825346215384239
+  m_Size: {x: 0.9090998, y: 1.004161, z: 0.19999997}
+  m_Center: {x: -0.022919038, y: 0.5016761, z: 6.241066e-11}
+--- !u!114 &6365059797140273107
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,6 +177,38 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 555397192759081915}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cb4af6b059a3f047b798c4200cff7c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyProblem
+  a: 0
+  b: 0
+  c: 0
+  answer: 0
+  operationTypeNum: 0
+  enemyTypeAssignment: 0
+  problemText: {fileID: 2951052184276267887}
+--- !u!114 &5153951114654609655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555397192759081915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f45299a835801044a68ea8e07901f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteLookAtCamera
+  player: {fileID: 0}
+--- !u!114 &9201825346215384239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555397192759081915}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f152c7339f207b341b6874b43027aaef, type: 3}
   m_Name: 
@@ -227,7 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   currentRow: 0
   currentIndex: 0
-  speed: 2
+  moveSpeed: 2
+  moveCheckDelay: 3
 --- !u!1 &6272895136000892783
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.727}
+  m_AnchoredPosition: {x: 0, y: 1.449}
   m_SizeDelta: {x: 726, y: 408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7472466048187558938
