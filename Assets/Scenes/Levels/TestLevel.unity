@@ -1446,7 +1446,7 @@ MonoBehaviour:
   c: 0
   answer: 0
   operationTypeNum: 0
-  enemyTypeAssignment: 0
+  enemyBasicHeavyAssignment: 0
   problemText: {fileID: 4612959684853506468}
 --- !u!4 &2992432369254674542
 Transform:

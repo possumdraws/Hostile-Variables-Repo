@@ -12,7 +12,7 @@ public class EnemyAttackCheck : MonoBehaviour
     void Start()
     {
         //check enemy type
-        switch(enemyProblem.enemyTypeAssignment)
+        switch(enemyProblem.enemyBasicHeavyAssignment)
         {
             case 0://basic
                 damage = 5;
