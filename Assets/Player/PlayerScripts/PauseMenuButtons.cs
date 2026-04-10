@@ -17,7 +17,7 @@ public class PauseMenuButtons : MonoBehaviour
     }
     public void MainMenuButton()
     {
-        SceneManager.LoadScene("Main Menu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
     }
     public void QuitGameButton()
     {

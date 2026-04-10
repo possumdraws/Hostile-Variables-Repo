@@ -9,6 +9,7 @@ public class EnemyMovement : MonoBehaviour
     public float moveSpeed = 2f; // speed to move toward next point
     public float moveCheckDelay = 3f; // wait time before checking next spot
 
+    [SerializeField]
     private TrackSpotOccupation track;
     private Transform targetPoint;
 
@@ -18,6 +19,7 @@ public class EnemyMovement : MonoBehaviour
     void Start()
     {
         // find the TrackSpotOccupation component
+        //in parent? get this working bruhh ;-;
         track = GameObject.FindFirstObjectByType<TrackSpotOccupation>();
 
         //choose a random FREE spot in the starting row
