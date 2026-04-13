@@ -8,21 +8,22 @@ public class LevelSelectScript : MonoBehaviour
     public void LevelOne()
     {
         menuButtonClick.Play();
-        SceneManager.LoadScene("TestLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
     public void LevelTwo()
     {
         menuButtonClick.Play();
-        SceneManager.LoadScene("TestLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
     public void LevelThree()
     {
         menuButtonClick.Play();
-        SceneManager.LoadScene("TestLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
     }
-    public void GoBack()
+
+    public void DevLevelSecret()
     {
         menuButtonClick.Play();
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
     }
 }

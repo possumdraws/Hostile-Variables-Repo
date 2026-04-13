@@ -12,10 +12,10 @@ GameObject:
   - component: {fileID: 2198956915388225889}
   - component: {fileID: 2010670155128939029}
   - component: {fileID: 6323816223704569278}
-  - component: {fileID: 5153951114654609655}
   - component: {fileID: 2350150602863912589}
-  - component: {fileID: 9201825346215384239}
   - component: {fileID: 5122557993924179723}
+  - component: {fileID: 5153951114654609655}
+  - component: {fileID: 9201825346215384239}
   - component: {fileID: 8673924147475489764}
   m_Layer: 0
   m_Name: Summando
@@ -144,23 +144,10 @@ Rigidbody:
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
   m_UseGravity: 1
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &5153951114654609655
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555397192759081915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f45299a835801044a68ea8e07901f22, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteLookAtCamera
-  player: {fileID: 0}
 --- !u!65 &2350150602863912589
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,20 +167,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.9090998, y: 1.0809977, z: 0.2}
-  m_Center: {x: -0.022919057, y: -0.024149511, z: 6.100054e-11}
---- !u!114 &9201825346215384239
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 555397192759081915}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f152c7339f207b341b6874b43027aaef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
+  m_Size: {x: 0.8603683, y: 0.9497237, z: 0.2}
+  m_Center: {x: -0.04728505, y: 0.5988899, z: 1.5477222e-10}
 --- !u!114 &5122557993924179723
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,6 +188,31 @@ MonoBehaviour:
   operationTypeNum: 0
   enemyTypeAssignment: 1
   problemText: {fileID: 2951052184276267887}
+--- !u!114 &5153951114654609655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555397192759081915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8f45299a835801044a68ea8e07901f22, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteLookAtCamera
+  player: {fileID: 0}
+--- !u!114 &9201825346215384239
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 555397192759081915}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f152c7339f207b341b6874b43027aaef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
 --- !u!114 &8673924147475489764
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -227,7 +227,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyMovement
   currentRow: 0
   currentIndex: 0
-  speed: 2
+  moveSpeed: 2
+  moveCheckDelay: 3
 --- !u!1 &6272895136000892783
 GameObject:
   m_ObjectHideFlags: 0
@@ -354,7 +355,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0.727}
+  m_AnchoredPosition: {x: 0, y: 1.29}
   m_SizeDelta: {x: 726, y: 408}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7472466048187558938

@@ -19,7 +19,7 @@ public class EnemyProblem : MonoBehaviour
      */
 
     [Header("ENEMY TYPE ASSIGNMENT\n0 = BASIC | 1 = HEAVY")]
-    public int enemyTypeAssignment;
+    public int enemyBasicHeavyAssignment;
 
     string operationTypeSymbol;//is assigned in Start() switch
 
@@ -53,11 +53,11 @@ public class EnemyProblem : MonoBehaviour
     void SetProblemTextAndOperator()
     {
         //if TMP text exists (assigned in inspector)
-        if (enemyTypeAssignment == 0 && problemText != null)
+        if (enemyBasicHeavyAssignment == 0 && problemText != null)
         {
             problemText.text = $"{a} {operationTypeSymbol} {b} = {answer}?";
         }
-        if (enemyTypeAssignment == 1 && problemText != null)
+        if (enemyBasicHeavyAssignment == 1 && problemText != null)
         {
             problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = {answer}?";
         }
@@ -74,14 +74,14 @@ public class EnemyProblem : MonoBehaviour
         b = Random.Range(1, 101);
         
         //basic gen
-        if (enemyTypeAssignment == 0)
+        if (enemyBasicHeavyAssignment == 0)
         {
             //calculate answer
             answer = a + b;
         }
 
         //heavy gen
-        if(enemyTypeAssignment == 1)
+        if(enemyBasicHeavyAssignment == 1)
         {
             //generate 3rd var for heavy enemies
             c = Random.Range(1, 101);
@@ -107,14 +107,14 @@ public class EnemyProblem : MonoBehaviour
         }
 
         //basic gen
-        if (enemyTypeAssignment == 0)
+        if (enemyBasicHeavyAssignment == 0)
         {
             //calculate
             answer = a - b;
         }
 
         //heavy gen
-        if (enemyTypeAssignment == 1)
+        if (enemyBasicHeavyAssignment == 1)
         {
             //set temp answer to make sure that c is lower than it
             int firstAnswer = a - b;
@@ -138,7 +138,7 @@ public class EnemyProblem : MonoBehaviour
     public void GenerateMultiProblem()
     {
         //basic gen
-        if (enemyTypeAssignment == 0)
+        if (enemyBasicHeavyAssignment == 0)
         {
             //lower numbers to keep the multiplication fair
             a = Random.Range(1, 15);
@@ -149,7 +149,7 @@ public class EnemyProblem : MonoBehaviour
         }
 
         //heavy gen
-        if (enemyTypeAssignment == 1)
+        if (enemyBasicHeavyAssignment == 1)
         {
             //lower numbers to keep the multiplication fair
             a = Random.Range(1, 6);
@@ -164,7 +164,7 @@ public class EnemyProblem : MonoBehaviour
     public void GenerateDivProblem()
     {
         //basic gen
-        if (enemyTypeAssignment == 0)
+        if (enemyBasicHeavyAssignment == 0)
         {
             //divisor
             b = Random.Range(1, 20);
@@ -177,7 +177,7 @@ public class EnemyProblem : MonoBehaviour
         }
 
         //heavy gen
-        if(enemyTypeAssignment == 1)
+        if(enemyBasicHeavyAssignment == 1)
         {
             //divisor
             b = Random.Range(2, 6);

@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections.Generic; // ADDED: needed for list of free spots
 
 public class EnemyMovement : MonoBehaviour
 {
@@ -8,18 +9,21 @@ public class EnemyMovement : MonoBehaviour
     public float moveSpeed = 2f; // speed to move toward next point
     public float moveCheckDelay = 3f; // wait time before checking next spot
 
+    [SerializeField]
     private TrackSpotOccupation track;
     private Transform targetPoint;
 
     private bool isMoving = false;
-    private float idleTimer = 0f; // timer for idle
+    private float idleTimer = 3f; // timer for idle
 
     void Start()
     {
         // find the TrackSpotOccupation component
+        //in parent? get this working bruhh ;-;
         track = GameObject.FindFirstObjectByType<TrackSpotOccupation>();
 
-        currentIndex = Random.Range(0,2);
+        //choose a random FREE spot in the starting row
+        currentIndex = GetRandomFreeIndexInRow(currentRow);
 
         if (track == null)
         {
@@ -28,7 +32,15 @@ public class EnemyMovement : MonoBehaviour
             return;
         }
 
-        // set initial position
+        //if no free spot exists, destroy this enemy to prevent overlap
+        if (currentIndex == -1)
+        {
+            Debug.LogWarning("No free spawn spots in row!");
+            Destroy(gameObject);
+            return;
+        }
+
+        // set initial position directly to MovePoint (sprites are bottom-pivot)
         targetPoint = track.GetPointTransform(currentRow, currentIndex);
         if (targetPoint == null)
         {
@@ -64,10 +76,19 @@ public class EnemyMovement : MonoBehaviour
                     return;
                 }
 
-                int nextIndex = Mathf.Min(currentIndex, track.Rows[nextRow].MovePoints.Length - 1);
+                // pick a random free spot in the next row
+                int nextIndex = GetRandomFreeIndexInRow(nextRow);
+
+                if (nextIndex == -1)
+                {
+                    // next row full, stay idle
+                    idleTimer = moveCheckDelay;
+                    return;
+                }
+
                 Transform nextPoint = track.GetPointTransform(nextRow, nextIndex);
 
-                if (nextPoint != null && track.IsSpotFree(nextRow, nextIndex))
+                if (nextPoint != null)
                 {
                     // free current spot and occupy next
                     track.SetOccupied(currentRow, currentIndex, false);
@@ -75,37 +96,59 @@ public class EnemyMovement : MonoBehaviour
 
                     // set target for smooth movement
                     targetPoint = nextPoint;
+                    currentIndex = nextIndex; // update to new index
                     isMoving = true;
                 }
                 else
                 {
-                    // stay idle. we'll handle the sprite stuff here i believe?
-                    idleTimer = moveCheckDelay; // reset timer if next spot is occupied
+                    // stay idle if nextPoint is null
+                    idleTimer = moveCheckDelay;
                 }
             }
         }
         else
         {
-            // move toward the target point smoothly
-            transform.position = Vector3.MoveTowards(
-                transform.position,
-                targetPoint.position,
-                moveSpeed * Time.deltaTime
-            );
+            // move toward the target point smoothly (Y is directly taken from MovePoint)
+            transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, moveSpeed * Time.deltaTime);
 
             // snap to target to remove tiny float errors
-            if ((transform.position - targetPoint.position).sqrMagnitude < 0.05f)
+            if ((transform.position - targetPoint.position).sqrMagnitude < 0.0001f)
             {
                 transform.position = targetPoint.position;
 
-                // update current row and index
+                // update current row
                 currentRow = Mathf.Min(currentRow + 1, track.Rows.Length - 1);
-                currentIndex = Mathf.Min(currentIndex, track.Rows[currentRow].MovePoints.Length - 1);
 
                 // finished moving, start idle timer
                 isMoving = false;
                 idleTimer = moveCheckDelay;
             }
+        }
+    }
+
+    // gets a random free index in a given row
+    int GetRandomFreeIndexInRow(int row)
+    {
+        List<int> freeIndexes = new List<int>();
+
+        for (int i = 0; i < track.Rows[row].MovePoints.Length; i++)
+        {
+            if (track.IsSpotFree(row, i))
+                freeIndexes.Add(i);
+        }
+
+        if (freeIndexes.Count == 0)
+            return -1; // no free spots
+
+        return freeIndexes[Random.Range(0, freeIndexes.Count)];
+    }
+
+    // free the spot when the enemy is destroyed
+    void OnDestroy()
+    {
+        if (track != null)
+        {
+            track.SetOccupied(currentRow, currentIndex, false);
         }
     }
 }
