@@ -186,7 +186,7 @@ MonoBehaviour:
   c: 0
   answer: 0
   operationTypeNum: 0
-  enemyTypeAssignment: 1
+  enemyBasicHeavyAssignment: 1
   problemText: {fileID: 2951052184276267887}
 --- !u!114 &5153951114654609655
 MonoBehaviour:
@@ -229,6 +229,7 @@ MonoBehaviour:
   currentIndex: 0
   moveSpeed: 2
   moveCheckDelay: 3
+  track: {fileID: 0}
 --- !u!1 &6272895136000892783
 GameObject:
   m_ObjectHideFlags: 0
@@ -256,17 +257,17 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6272895136000892783}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0.00010699}
   m_LocalScale: {x: 7.1079, y: 3.9591, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 14519359096659150}
   m_Father: {fileID: 8653315823988624548}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.0000097595, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 429.49, y: -225}
+  m_SizeDelta: {x: 120.8, y: 113.66}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8747715956677994932
 CanvasRenderer:
@@ -346,7 +347,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7872292838461585483}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 5.8611815e-10}
   m_LocalScale: {x: 0.0013090462, y: 0.0007774972, z: 0.0010908719}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -355,8 +356,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 1.29}
-  m_SizeDelta: {x: 726, y: 408}
+  m_AnchoredPosition: {x: -0.00000002153865, y: 1.29}
+  m_SizeDelta: {x: 859, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7472466048187558938
 Canvas:
@@ -460,16 +461,16 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7976049209734776160}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0.000084582425}
+  m_LocalPosition: {x: 0, y: 0, z: -0.00012738}
   m_LocalScale: {x: 0.5064313, y: 0.9092124, z: 3.599663}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4631754599948468046}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 60.40001, y: -56.829994}
+  m_SizeDelta: {x: 238.53, y: 125.01}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6051622926840564775
 CanvasRenderer:
@@ -533,8 +534,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1

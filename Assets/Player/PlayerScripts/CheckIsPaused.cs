@@ -5,10 +5,13 @@ public class CheckIsPaused : MonoBehaviour
     //need to see this in PullUpCalculator so it doesn't interfere, therefore public static
     public static bool paused = false;
     public GameObject pauseMenuCanvas;//canvas object
+    public GameObject UICanvas;//player UI
 
-    private void Start()
+    void Start()
     {
         paused = false;
+        Time.timeScale = 1f;
+        AudioListener.pause = false;
 
         if (pauseMenuCanvas != null)
         {
@@ -39,6 +42,7 @@ public class CheckIsPaused : MonoBehaviour
         if (pauseMenuCanvas != null)
         {
             pauseMenuCanvas.SetActive(true);
+            UICanvas.SetActive(false);
         }
         paused = true;
         //Cursor.visible = paused;
@@ -53,6 +57,7 @@ public class CheckIsPaused : MonoBehaviour
         if (pauseMenuCanvas != null)
         {
             pauseMenuCanvas.SetActive(false);
+            UICanvas.SetActive(true);
         }
         paused = false;
         //Cursor.visible = paused;

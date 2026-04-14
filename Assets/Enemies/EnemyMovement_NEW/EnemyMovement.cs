@@ -6,15 +6,15 @@ public class EnemyMovement : MonoBehaviour
     [Header("Settings")]
     public int currentRow = 0;
     public int currentIndex;
-    public float moveSpeed = 2f; // speed to move toward next point
-    public float moveCheckDelay = 3f; // wait time before checking next spot
+    public float moveSpeed = 3f; // speed to move toward next point
+    public float moveCheckDelay = 5f; // wait time before checking next spot
 
     [SerializeField]
     private TrackSpotOccupation track;
     private Transform targetPoint;
 
     private bool isMoving = false;
-    private float idleTimer = 3f; // timer for idle
+    private float idleTimer = 5f; // timer for idle
 
     //allows spawner to assign the correct track
     public void SetTrack(TrackSpotOccupation assignedTrack)
@@ -76,53 +76,7 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
-        if (!isMoving)
-        {
-            // count down the idle timer
-            idleTimer -= Time.deltaTime;
-
-            if (idleTimer <= 0f)
-            {
-                // check for next point after idle
-                int nextRow = currentRow + 1;
-                if (nextRow >= track.Rows.Length)
-                {
-                    // no more rows, reset timer to keep checking (optional)
-                    idleTimer = moveCheckDelay;
-                    return;
-                }
-
-                // pick a random free spot in the next row
-                int nextIndex = GetRandomFreeIndexInRow(nextRow);
-
-                if (nextIndex == -1)
-                {
-                    // next row full, stay idle
-                    idleTimer = moveCheckDelay;
-                    return;
-                }
-
-                Transform nextPoint = track.GetPointTransform(nextRow, nextIndex);
-
-                if (nextPoint != null)
-                {
-                    // free current spot and occupy next
-                    track.SetOccupied(currentRow, currentIndex, false);
-                    track.SetOccupied(nextRow, nextIndex, true);
-
-                    // set target for smooth movement
-                    targetPoint = nextPoint;
-                    currentIndex = nextIndex; // update to new index
-                    isMoving = true;
-                }
-                else
-                {
-                    // stay idle if nextPoint is null
-                    idleTimer = moveCheckDelay;
-                }
-            }
-        }
-        else
+        if (isMoving)
         {
             // move toward the target point smoothly (Y is directly taken from MovePoint)
             transform.position = Vector3.MoveTowards(transform.position, targetPoint.position, moveSpeed * Time.deltaTime);
@@ -139,7 +93,55 @@ public class EnemyMovement : MonoBehaviour
                 isMoving = false;
                 idleTimer = moveCheckDelay;
             }
+
+            return;
         }
+
+        // count down the idle timer
+        idleTimer -= Time.deltaTime;
+
+        if (idleTimer > 0f)
+        {
+            return; //stay idle until timer finishes
+        }
+
+        // check for next point after idle
+        int nextRow = currentRow + 1;
+
+        if (nextRow >= track.Rows.Length)
+        {
+            // no more rows, reset timer to keep checking (optional)
+            idleTimer = moveCheckDelay;
+            return;
+        }
+
+        // pick a random free spot in the next row
+        int nextIndex = GetRandomFreeIndexInRow(nextRow);
+
+        if (nextIndex == -1)
+        {
+            // next row full, stay idle
+            idleTimer = moveCheckDelay;
+            return;
+        }
+
+        Transform nextPoint = track.GetPointTransform(nextRow, nextIndex);
+
+        if (nextPoint == null)
+        {
+            // stay idle if nextPoint is null
+            idleTimer = moveCheckDelay;
+            return;
+        }
+
+        // free current spot and occupy next
+        track.SetOccupied(currentRow, currentIndex, false);
+        track.SetOccupied(nextRow, nextIndex, true);
+
+        // set target for smooth movement
+        targetPoint = nextPoint;
+        currentIndex = nextIndex; // update to new index
+        isMoving = true;
     }
 
     // gets a random free index in a given row
