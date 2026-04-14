@@ -16,11 +16,27 @@ public class EnemyMovement : MonoBehaviour
     private bool isMoving = false;
     private float idleTimer = 3f; // timer for idle
 
+    //allows spawner to assign the correct track
+    public void SetTrack(TrackSpotOccupation assignedTrack)
+    {
+        track = assignedTrack;
+    }
+
     void Start()
     {
         // find the TrackSpotOccupation component
         //in parent? get this working bruhh ;-;
-        track = GameObject.FindFirstObjectByType<TrackSpotOccupation>();
+
+        // REMOVED: FindFirstObjectByType (causes all enemies to use same track)
+        // track = GameObject.FindFirstObjectByType<TrackSpotOccupation>();
+
+        //safety check so enemy doesn't run without a track
+        if (track == null)
+        {
+            Debug.LogError("TrackSpotOccupation not assigned to enemy!");
+            Destroy(gameObject);
+            return;
+        }
 
         //choose a random FREE spot in the starting row
         currentIndex = GetRandomFreeIndexInRow(currentRow);
@@ -134,11 +150,15 @@ public class EnemyMovement : MonoBehaviour
         for (int i = 0; i < track.Rows[row].MovePoints.Length; i++)
         {
             if (track.IsSpotFree(row, i))
+            {
                 freeIndexes.Add(i);
+            }
         }
 
         if (freeIndexes.Count == 0)
+        {
             return -1; // no free spots
+        }
 
         return freeIndexes[Random.Range(0, freeIndexes.Count)];
     }
