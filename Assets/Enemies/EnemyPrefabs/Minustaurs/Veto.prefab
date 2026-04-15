@@ -100,8 +100,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -492,7 +492,7 @@ MonoBehaviour:
   c: 0
   answer: 0
   operationTypeNum: 0
-  enemyTypeAssignment: 0
+  enemyBasicHeavyAssignment: 0
   problemText: {fileID: 2368856232129643001}
 --- !u!54 &5973524569754735622
 Rigidbody:
@@ -583,3 +583,4 @@ MonoBehaviour:
   currentIndex: 0
   moveSpeed: 2
   moveCheckDelay: 3
+  track: {fileID: 0}

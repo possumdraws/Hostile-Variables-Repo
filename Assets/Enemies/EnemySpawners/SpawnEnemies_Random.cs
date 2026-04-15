@@ -20,6 +20,10 @@ public class SpawnEnemies_Random : MonoBehaviour
     [Header("How Many Can Spawn Before it Stops")]
     public int maxSpawned = 5;
 
+    //reference to the correct board for this spawner
+    [SerializeField]
+    private TrackSpotOccupation track;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -96,6 +100,17 @@ public class SpawnEnemies_Random : MonoBehaviour
 
             //Instantiate
             spawnedEnemy = Instantiate(heavyEnemies[pickEnemy], spawnerPosition.position, spawnerPosition.rotation);
+        }
+
+        //assign correct track to the spawned enemy
+        EnemyMovement enemyScript = spawnedEnemy.GetComponent<EnemyMovement>();
+        if (enemyScript != null)
+        {
+            enemyScript.SetTrack(track); // tells enemy which board to use
+        }
+        else
+        {
+            Debug.LogError("Spawned enemy missing EnemyMovement script!");
         }
 
         //add so it stops spawning enemies eventually

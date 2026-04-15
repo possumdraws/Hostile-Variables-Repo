@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 453324088856017684}
   - component: {fileID: 2368856232129643001}
   - component: {fileID: 1344573514889826406}
+  - component: {fileID: 993602173425251075}
   m_Layer: 5
   m_Name: AxolotlText
   m_TagString: enemy
@@ -33,10 +34,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 8874492477792169794}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &453324088856017684
 CanvasRenderer:
@@ -100,8 +101,8 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
-  m_HorizontalAlignment: 1
-  m_VerticalAlignment: 256
+  m_HorizontalAlignment: 2
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_characterHorizontalScale: 1
@@ -150,6 +151,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d4f0f3a40b659468fae36e32517741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtPlayer
+--- !u!114 &993602173425251075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1948323679493861281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc0a8ea91f2155429c2f6004c2d274e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AutoResizeTextBox
+  padding: {x: 10, y: 10}
 --- !u!1 &2338831944259007919
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,6 +176,7 @@ GameObject:
   - component: {fileID: 4452782084894733869}
   - component: {fileID: 6915033525057569113}
   - component: {fileID: 6987883435168292377}
+  - component: {fileID: 245685932917457255}
   m_Layer: 0
   m_Name: backdrop
   m_TagString: enemy
@@ -239,6 +254,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5d4f0f3a40b659468fae36e32517741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LookAtPlayer
+--- !u!114 &245685932917457255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2338831944259007919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 30649d3a9faa99c48a7b1166b86bf2a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.HorizontalLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_Spacing: 0
+  m_ChildForceExpandWidth: 1
+  m_ChildForceExpandHeight: 1
+  m_ChildControlWidth: 1
+  m_ChildControlHeight: 1
+  m_ChildScaleWidth: 1
+  m_ChildScaleHeight: 1
+  m_ReverseArrangement: 0
 --- !u!1 &8391107611907595187
 GameObject:
   m_ObjectHideFlags: 0
@@ -540,7 +581,7 @@ MonoBehaviour:
   c: 0
   answer: 0
   operationTypeNum: 0
-  enemyTypeAssignment: 0
+  enemyBasicHeavyAssignment: 0
   problemText: {fileID: 2368856232129643001}
 --- !u!114 &8213175150980624269
 MonoBehaviour:
@@ -583,3 +624,4 @@ MonoBehaviour:
   currentIndex: 0
   moveSpeed: 2
   moveCheckDelay: 3
+  track: {fileID: 0}

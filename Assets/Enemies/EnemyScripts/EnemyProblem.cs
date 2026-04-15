@@ -56,10 +56,12 @@ public class EnemyProblem : MonoBehaviour
         if (enemyBasicHeavyAssignment == 0 && problemText != null)
         {
             problemText.text = $"{a} {operationTypeSymbol} {b} = {answer}?";
+            //problemText.text = $"{a} {operationTypeSymbol} {b} = ?";
         }
         if (enemyBasicHeavyAssignment == 1 && problemText != null)
         {
             problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = {answer}?";
+            //problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = ?";
         }
     }
 
