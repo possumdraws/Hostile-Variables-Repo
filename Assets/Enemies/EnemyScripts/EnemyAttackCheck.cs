@@ -2,6 +2,15 @@ using UnityEngine;
 
 public class EnemyAttackCheck : MonoBehaviour
 {
+    /* 
+     * SPAWNERS
+     * ROW 0
+     * ROW 1 (ranger)
+     * ROW 2 (basic)
+     * 
+     * PLAYER
+     */
+
     //damage number from enemy
     public int damage;
     public bool inRange;
