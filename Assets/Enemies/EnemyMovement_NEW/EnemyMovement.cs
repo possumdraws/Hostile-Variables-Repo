@@ -3,7 +3,10 @@ using System.Collections.Generic; // ADDED: needed for list of free spots
 
 public class EnemyMovement : MonoBehaviour
 {
-    [Header("Settings")]
+    [Header("Animator")]
+    public Animator animator; 
+
+    [Header("Movement Details")]
     public int currentRow = 0;
     public int currentIndex;
     public float moveSpeed = 3f; // speed to move toward next point
@@ -13,7 +16,7 @@ public class EnemyMovement : MonoBehaviour
     private TrackSpotOccupation track;
     private Transform targetPoint;
 
-    private bool isMoving = false;
+    public bool isMoving = false;
     private float idleTimer = 5f; // timer for idle
 
     //allows spawner to assign the correct track
@@ -76,6 +79,9 @@ public class EnemyMovement : MonoBehaviour
 
     private void Update()
     {
+        //set the variable for the animator
+        animator.SetBool("isMoving", isMoving);
+
         if (isMoving)
         {
             // move toward the target point smoothly (Y is directly taken from MovePoint)
