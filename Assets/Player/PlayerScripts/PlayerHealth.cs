@@ -24,11 +24,11 @@ public class PlayerHealth : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.D) && currentHealth > 0)
         {
-            TakeDamageTest(20);
+            TakeDamage(20);
         }
     }
 
-    void TakeDamageTest(int damage)
+    public void TakeDamage(int damage)
     {
         currentHealth -= damage;
 

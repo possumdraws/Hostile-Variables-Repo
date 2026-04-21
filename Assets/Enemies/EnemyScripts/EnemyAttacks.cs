@@ -1,3 +1,4 @@
+using NUnit.Framework;
 using UnityEngine;
 
 public class EnemyAttacks : MonoBehaviour
@@ -21,46 +22,27 @@ public class EnemyAttacks : MonoBehaviour
     {
         public int damage;
         public int range;
-
     }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+
+
+    Attack BasicAttack()
     {
-        
+        return new Attack { damage = 5, range = 2 };
     }
 
-    // Update is called once per frame
-    void Update()
+    Attack HeavyAttack()
     {
-        
+        return new Attack { damage = 10, range = 2 };
     }
 
-    void BasicAttack()
+    Attack RangedAttack()
     {
-        Attack attack = new Attack();
-        attack.damage = 5;
-        attack.range = 2;
+        return new Attack { damage = 3, range = 5 };
     }
 
-    void HeavyAttack()
+    Attack SpecialAttack()
     {
-        Attack attack = new Attack();
-        attack.damage = 10;
-        attack.range = 2;
-    }
-
-    void RangedAttack()
-    {
-        Attack attack = new Attack();
-        attack.damage = 3;
-        attack.range = 1;
-    }
-
-    void SpecialAttack()
-    {
-        Attack attack = new Attack();
-        attack.damage = 1;
-        attack.range = 2;
+        return new Attack { damage = 1, range = 2 };
     }
 }

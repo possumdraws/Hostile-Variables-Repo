@@ -394,10 +394,11 @@ GameObject:
   - component: {fileID: 2842423425431057283}
   - component: {fileID: 5973524569754735622}
   - component: {fileID: 4251817922814288413}
+  - component: {fileID: 768835536455110823}
   - component: {fileID: 3298093712468989701}
   - component: {fileID: 8213175150980624269}
-  - component: {fileID: 276119555215737141}
   - component: {fileID: 7914217229799578327}
+  - component: {fileID: 4592921871442335236}
   m_Layer: 0
   m_Name: Addet
   m_TagString: enemy
@@ -551,6 +552,103 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.90909964, y: 0.9636698, z: 0.2}
   m_Center: {x: -0, y: 0.5766631, z: -0}
+--- !u!82 &768835536455110823
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194902376921693633}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 8fa495e44aecdb8409146169a94498e2, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!114 &3298093712468989701
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -568,7 +666,7 @@ MonoBehaviour:
   c: 0
   answer: 0
   operationTypeNum: 0
-  enemyBasicHeavyAssignment: 0
+  enemyIsHeavy: 0
   problemText: {fileID: 5754311819241859757}
 --- !u!114 &8213175150980624269
 MonoBehaviour:
@@ -583,18 +681,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpriteLookAtCamera
   player: {fileID: 0}
---- !u!114 &276119555215737141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 9194902376921693633}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f152c7339f207b341b6874b43027aaef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EnemyMove
 --- !u!114 &7914217229799578327
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -614,6 +700,24 @@ MonoBehaviour:
   moveCheckDelay: 3
   track: {fileID: 0}
   isMoving: 0
+--- !u!114 &4592921871442335236
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9194902376921693633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8da39abe8b8b08459eeec585d65b7d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackCheck
+  EnemyType: 0
+  baseTimerDelay: 3
+  damage: 5
+  range: 0
+  animator: {fileID: 2842423425431057283}
+  AttackSound: {fileID: 768835536455110823}
 --- !u!1001 &1553976444493883047
 PrefabInstance:
   m_ObjectHideFlags: 0
