@@ -9,11 +9,13 @@ public class CheckIsPaused : MonoBehaviour
     public GameObject pauseMenuCanvas;//canvas object
     public GameObject UICanvas;//player UI
     public GameObject GameOverCanvas; //game over canvas
+    public GameObject ControlsCanvas;
 
     [Header("Health Stuff")]
     public bool isAlive;
     public PlayerHealth playerHealth;
-    void Start()
+
+    void OnEnable()
     {
         isAlive = true;
 
@@ -25,14 +27,22 @@ public class CheckIsPaused : MonoBehaviour
         {
             pauseMenuCanvas.SetActive(false);
         }
+
         if (GameOverCanvas != null)
         {
             GameOverCanvas.SetActive(false);
         }
+        if(ControlsCanvas != null)
+        {
+            ControlsCanvas.SetActive(false);
+        }
     }
+
     // Update is called once per frame
     public void Update()
     {
+        Debug.Log($"Game is paused? T/F -> {paused}");
+        
         if (playerHealth.currentHealth <= 0)
         {
             Die();
@@ -55,12 +65,14 @@ public class CheckIsPaused : MonoBehaviour
     void PauseGame()
     {
         Time.timeScale = 0f;
-        AudioListener.pause = true;
+        //AudioListener.pause = true;
+
         if (pauseMenuCanvas != null)
         {
             pauseMenuCanvas.SetActive(true);
             UICanvas.SetActive(false);
         }
+
         paused = true;
         //Cursor.visible = paused;
         //Cursor.lockState = CursorLockMode.None;
@@ -69,13 +81,23 @@ public class CheckIsPaused : MonoBehaviour
     //Resume
     public void ResumeGame()
     {
+        Debug.Log("Resume clicked");
+
         Time.timeScale = 1f;
-        AudioListener.pause = false;
+        //AudioListener.pause = false;
+
         if (pauseMenuCanvas != null)
         {
+            Debug.Log("Disabling pauseMenuCanvas: " + pauseMenuCanvas.name);
             pauseMenuCanvas.SetActive(false);
+        }
+
+        if (UICanvas != null)
+        {
+            Debug.Log("Enabling UICanvas: " + UICanvas.name);
             UICanvas.SetActive(true);
         }
+
         paused = false;
         //Cursor.visible = paused;
         //Cursor.lockState = CursorLockMode.Locked;
