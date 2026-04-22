@@ -34,5 +34,10 @@ public class PlayerHealth : MonoBehaviour
 
         healthbar.SetHealth(currentHealth);
     }
+
+    /*public int GetCurrentHealth()
+    {
+        return currentHealth;
+    }*/
 }
 

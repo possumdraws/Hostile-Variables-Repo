@@ -3,6 +3,7 @@ using TMPro;
 
 public class DisplayEnemyProblemOnHover : MonoBehaviour
 {
+
     [Header("Problems")]
     public TextMeshProUGUI calculatorPlaceholder;
 
@@ -27,7 +28,7 @@ public class DisplayEnemyProblemOnHover : MonoBehaviour
         {return;}
 
         Ray ray = detectEnemy.CalibrateRayCast();
-        if(Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("enemy"))
+        if(Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("enemy") && !CheckIsPaused.paused)
         {
             EnemyProblem enemyProblem = hit.collider.GetComponent<EnemyProblem>();
             

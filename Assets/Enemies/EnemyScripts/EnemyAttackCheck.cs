@@ -16,7 +16,7 @@ public class EnemyAttackCheck : MonoBehaviour
     public int range;
 
     [Header("Attack Attributes")]
-    public Animator animator;
+    //public Animator animator;
     public AudioSource AttackSound;
 
     bool attackChance;

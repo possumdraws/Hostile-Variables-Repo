@@ -2866,6 +2866,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1353749804}
     - target: {fileID: 2217941482889044976, guid: ecd7429b79c11e047bb5711c5d478fc8, type: 3}
+      propertyPath: playerHealth
+      value: 
+      objectReference: {fileID: 1915468081}
+    - target: {fileID: 2217941482889044976, guid: ecd7429b79c11e047bb5711c5d478fc8, type: 3}
+      propertyPath: GameOverCanvas
+      value: 
+      objectReference: {fileID: 1915468080}
+    - target: {fileID: 2217941482889044976, guid: ecd7429b79c11e047bb5711c5d478fc8, type: 3}
       propertyPath: pauseMenuCanvas
       value: 
       objectReference: {fileID: 1289526945}
@@ -3912,6 +3920,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2b3a806a58acd944fa6134711bac0968, type: 3}
+--- !u!1 &1915468080 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2825450979933283732, guid: 2b3a806a58acd944fa6134711bac0968, type: 3}
+  m_PrefabInstance: {fileID: 1915468079}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1915468081 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 557975698807387670, guid: 2b3a806a58acd944fa6134711bac0968, type: 3}
+  m_PrefabInstance: {fileID: 1915468079}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8006d5229485f734c9d27a92af08276d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerHealth
 --- !u!1 &1963237848
 GameObject:
   m_ObjectHideFlags: 0
