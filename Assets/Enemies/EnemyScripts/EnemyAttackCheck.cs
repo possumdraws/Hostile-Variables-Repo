@@ -130,7 +130,7 @@ public class EnemyAttackCheck : MonoBehaviour
     //animator func when the time comes
     void PlayAttackAnimation()
     {
-        animator.SetTrigger("triggerAttack");
+        //animator.SetTrigger("triggerAttack");
     }
 
 }
