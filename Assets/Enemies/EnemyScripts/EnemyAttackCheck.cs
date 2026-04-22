@@ -16,14 +16,13 @@ public class EnemyAttackCheck : MonoBehaviour
     public int range;
 
     [Header("Attack Attributes")]
-    //public Animator animator;
+    public Animator animator;
     public AudioSource AttackSound;
 
     bool attackChance;
 
     EnemyMovement enemyMovement;
     PlayerHealth playerHealth;
-
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
