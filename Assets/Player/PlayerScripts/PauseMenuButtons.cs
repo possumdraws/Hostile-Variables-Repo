@@ -10,7 +10,6 @@ public class PauseMenuButtons : MonoBehaviour
     {
         pauseCheck.ResumeGame();
     }
-
     public void SettingsButton()
     {
         //will do this later. I need to research keeping progress, saving, etc.
@@ -25,5 +24,10 @@ public class PauseMenuButtons : MonoBehaviour
         EditorApplication.isPlaying = false;
         //close built application
         Application.Quit();
+    }
+    //=====RETRY BUTTON FOR GAME OVER======//
+    public void RetryButton()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
