@@ -54,7 +54,7 @@ public class EnemyMovement : MonoBehaviour
         //if no free spot exists, destroy this enemy to prevent overlap
         if (currentIndex == -1)
         {
-            Debug.LogWarning("No free spawn spots in row!");
+            Debug.Log("No free spawn spots in row!");
             Destroy(gameObject);
             return;
         }

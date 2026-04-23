@@ -45,7 +45,7 @@ public class SpawnEnemies_Random : MonoBehaviour
     //IEnumerator is just unity stuff for delays. its a return type
     IEnumerator Spawn()
     {
-        spawnDelay = Random.Range(1f, 5f);
+        spawnDelay = Random.Range(3f, 8f);
         //can spawn enabled when called
         canSpawn = true;
         //random value for picking type of enemy
