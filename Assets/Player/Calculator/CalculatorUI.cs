@@ -6,6 +6,7 @@ public class CalculatorUI : MonoBehaviour
 {
     [Header("UI References")]
     public TMP_InputField inputField;// TMP input field
+    public TMP_InputField storedInputField;// store input to keep in on screen
     public Button[] numberButtons;// Buttons 0-9
     public Button enterButton;
     public Button deleteButton;
@@ -53,8 +54,13 @@ public class CalculatorUI : MonoBehaviour
     //append a number to the input field text
     private void AppendNumber(int number)
     {
-        ButtonClick.Play();
-        inputField.text += number.ToString();
+        //make sure that someone cant enter 1476532413247564321574641534534534...
+        if (inputField.text.Length < 4) 
+        {
+            storedInputField.text = "";
+            ButtonClick.Play();
+            inputField.text += number.ToString();
+        }
     }
 
     //handle enter button click
@@ -75,9 +81,11 @@ public class CalculatorUI : MonoBehaviour
         //assign value to public string
         enteredValue = value;
 
+        //put the entered value on the right before clearing
+        storedInputField.text = inputField.text;
+
         //clear after enter
         inputField.text = "";
-
     }
 
     //deletes the last character from the input field

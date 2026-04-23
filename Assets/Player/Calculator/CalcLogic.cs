@@ -12,6 +12,8 @@ public class CalcLogic : MonoBehaviour
     private DetectEnemy detectEnemy;
     private CalculatorUI calculatorUI;
     private PullUpCalculator pullUpCalculator;
+
+    float delayBeforeClearingText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -23,6 +25,17 @@ public class CalcLogic : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //countdown until getting rid of the green check
+        if (delayBeforeClearingText > 0)
+        {
+            delayBeforeClearingText -= Time.deltaTime;
+
+            if (delayBeforeClearingText <= 0)
+            {
+                calculatorUI.storedInputField.text = "";//clear after cooldown
+            }
+        }
+
         if (CheckIsPaused.paused)
         {
             return;
@@ -59,7 +72,14 @@ public class CalcLogic : MonoBehaviour
             EnemyProblem enemyProblem = hit.collider.GetComponent<EnemyProblem>();
             if (enemyProblem != null && calculatorUI.enteredValue == enemyProblem.answer.ToString())
             {
+                calculatorUI.storedInputField.text = "<color=green>!</color>";//green check if correct ( \u2713 )
+                delayBeforeClearingText = 2f;
                 Destroy(hit.collider.gameObject);
+            }
+            else if (enemyProblem != null && calculatorUI.enteredValue != enemyProblem.answer.ToString())
+            {
+                calculatorUI.storedInputField.text = "<color=red>×</color>";//red check if false
+                delayBeforeClearingText = 2f;
             }
         }
     }

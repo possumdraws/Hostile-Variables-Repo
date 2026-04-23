@@ -72,8 +72,8 @@ public class EnemyProblem : MonoBehaviour
     public void GenerateAddProblem()
     {
         //generate random numbers
-        a = Random.Range(1, 101);
-        b = Random.Range(1, 101);
+        a = Random.Range(1, 31);
+        b = Random.Range(1, 31);
         
         //basic gen
         if (!enemyIsHeavy)
@@ -86,7 +86,7 @@ public class EnemyProblem : MonoBehaviour
         if(enemyIsHeavy)
         {
             //generate 3rd var for heavy enemies
-            c = Random.Range(1, 101);
+            c = Random.Range(1, 41);
             
             //calculate heavy answer
             answer = a + b + c;
@@ -96,8 +96,8 @@ public class EnemyProblem : MonoBehaviour
     //==> SUBTRACTION <==\\
     public void GenerateSubProblem()
     {
-        a = Random.Range(1, 101);
-        b = Random.Range(1, 101);
+        a = Random.Range(1, 31);
+        b = Random.Range(1, 31);
 
         //ensure that there aren't negative numbers
         if (b > a)
@@ -143,8 +143,8 @@ public class EnemyProblem : MonoBehaviour
         if (!enemyIsHeavy)
         {
             //lower numbers to keep the multiplication fair
-            a = Random.Range(1, 15);
-            b = Random.Range(1, 15);
+            a = Random.Range(1, 11);
+            b = Random.Range(1, 11);
 
             //calculate
             answer = a * b;

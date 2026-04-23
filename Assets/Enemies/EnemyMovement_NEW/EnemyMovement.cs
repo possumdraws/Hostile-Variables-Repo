@@ -10,14 +10,14 @@ public class EnemyMovement : MonoBehaviour
     public int currentRow = 0;
     public int currentIndex;
     public float moveSpeed = 3f; // speed to move toward next point
-    public float moveCheckDelay = 5f; // wait time before checking next spot
+    public float moveCheckDelay = 15f; // wait time before checking next spot
 
     [SerializeField]
     private TrackSpotOccupation track;
     private Transform targetPoint;
 
     public bool isMoving = false;
-    private float idleTimer = 5f; // timer for idle
+    private float idleTimer; // timer for idle
 
     //allows spawner to assign the correct track
     public void SetTrack(TrackSpotOccupation assignedTrack)
@@ -95,7 +95,7 @@ public class EnemyMovement : MonoBehaviour
                 // update current row
                 currentRow = Mathf.Min(currentRow + 1, track.Rows.Length - 1);
 
-                // finished moving, start idle timer
+                // finished moving, restart idle timer
                 isMoving = false;
                 idleTimer = moveCheckDelay;
             }

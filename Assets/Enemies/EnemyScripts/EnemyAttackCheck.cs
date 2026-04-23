@@ -79,12 +79,13 @@ public class EnemyAttackCheck : MonoBehaviour
         AttackSound.Play();
         PlayAttackAnimation();
 
-        if (playerHealth != null)
+        if (playerHealth != null && !playerHealth.invincible)
         {
             playerHealth.TakeDamage(damage);
+            //log
+            Debug.Log($"{name} attacked ({attackChance} chance) for {damage} at row {range}");
         }
-        //log
-        Debug.Log($"{name} attacked ({attackChance} chance) for {damage} at row {range}");
+        
     }
 
     int SetDamage()

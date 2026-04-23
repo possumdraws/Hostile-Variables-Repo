@@ -697,7 +697,7 @@ MonoBehaviour:
   currentRow: 0
   currentIndex: 0
   moveSpeed: 2
-  moveCheckDelay: 3
+  moveCheckDelay: 6
   track: {fileID: 0}
   isMoving: 0
 --- !u!114 &4592921871442335236
