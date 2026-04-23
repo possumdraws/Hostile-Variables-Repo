@@ -10,7 +10,8 @@ public class PauseMenuButtons : MonoBehaviour
     public void ResumeButton()
     {
         pauseMenuButtonSound.Play();
-        pauseCheck.ResumeGame();
+        //pauseCheck.ResumeGame();
+        FindFirstObjectByType<CheckIsPaused>().ResumeGame();
     }
     public void SettingsButton()
     {

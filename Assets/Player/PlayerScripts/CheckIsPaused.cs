@@ -23,6 +23,10 @@ public class CheckIsPaused : MonoBehaviour
         Time.timeScale = 1f;
         AudioListener.pause = false;
 
+        if(UICanvas != null)
+        {
+            UICanvas.SetActive(true);
+        }
         if (pauseMenuCanvas != null)
         {
             pauseMenuCanvas.SetActive(false);
