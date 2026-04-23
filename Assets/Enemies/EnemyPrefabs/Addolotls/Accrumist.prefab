@@ -643,6 +643,7 @@ MonoBehaviour:
   baseTimerDelay: 3
   damage: 0
   range: 0
+  animator: {fileID: 3906958842736412012}
   AttackSound: {fileID: 6943378064182643653}
 --- !u!1 &7308384075909818549
 GameObject:
