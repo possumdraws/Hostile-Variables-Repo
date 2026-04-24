@@ -2,6 +2,10 @@ using UnityEngine;
 
 public class MusicPlayer : MonoBehaviour
 {
+    [Header("Volume Control")]
+    [Range(0f, 1f)]
+    public float volume = 1f;
+
     [Header("This will play once when the level loads")]
     public AudioClip INTRO_MUSIC;
     [Header("This will loop after the intro music is finished")]
@@ -16,6 +20,7 @@ public class MusicPlayer : MonoBehaviour
         INTRO_SOURCE = gameObject.AddComponent<AudioSource>();
         INTRO_SOURCE.clip = INTRO_MUSIC;
         INTRO_SOURCE.loop = false;
+        INTRO_SOURCE.volume = volume;
         INTRO_SOURCE.Play();
 
         //schedule loop to play after intro finishes
@@ -23,6 +28,7 @@ public class MusicPlayer : MonoBehaviour
         LOOP_SOURCE = gameObject.AddComponent<AudioSource>();
         LOOP_SOURCE.clip = LOOP_MUSIC;
         LOOP_SOURCE.loop = true;
+        LOOP_SOURCE.volume = volume;
         LOOP_SOURCE.PlayScheduled(AudioSettings.dspTime + introDuration);
     }
 
