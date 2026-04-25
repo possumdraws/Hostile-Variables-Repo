@@ -1541,15 +1541,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4266535777268199822, guid: 2b3a806a58acd944fa6134711bac0968, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 374.27634
+      value: -0.01
       objectReference: {fileID: 0}
     - target: {fileID: 4266535777268199822, guid: 2b3a806a58acd944fa6134711bac0968, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.00001
+      value: 0.76
       objectReference: {fileID: 0}
     - target: {fileID: 4266535777268199822, guid: 2b3a806a58acd944fa6134711bac0968, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -392.90372
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: 4266535777268199822, guid: 2b3a806a58acd944fa6134711bac0968, type: 3}
       propertyPath: m_LocalRotation.w
@@ -4495,6 +4495,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 3298059016496677182, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
+      propertyPath: LOOP_MUSIC
+      value: 
+      objectReference: {fileID: 8300000, guid: 9169e0c9b4d76ba4da2400eb4d7d26cc, type: 3}
+    - target: {fileID: 3298059016496677182, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
+      propertyPath: INTRO_MUSIC
+      value: 
+      objectReference: {fileID: 8300000, guid: 9169e0c9b4d76ba4da2400eb4d7d26cc, type: 3}
     - target: {fileID: 5729248365321632356, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.74108
