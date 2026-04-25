@@ -12,6 +12,8 @@ public class CalcLogic : MonoBehaviour
     private DetectEnemy detectEnemy;
     private CalculatorUI calculatorUI;
     private PullUpCalculator pullUpCalculator;
+    private ScoreKeeper scoreKeeper;
+    private PlayerHealth playerHealth;
 
     float delayBeforeClearingText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -20,6 +22,8 @@ public class CalcLogic : MonoBehaviour
         detectEnemy = GameObject.FindFirstObjectByType<DetectEnemy>();
         calculatorUI = GameObject.FindFirstObjectByType<CalculatorUI>();
         pullUpCalculator = GameObject.FindFirstObjectByType<PullUpCalculator>();
+        scoreKeeper = GameObject.FindFirstObjectByType<ScoreKeeper>();
+        playerHealth = GameObject.FindFirstObjectByType<PlayerHealth>();
     }
 
     // Update is called once per frame
@@ -70,16 +74,30 @@ public class CalcLogic : MonoBehaviour
         if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("enemy"))
         {
             EnemyProblem enemyProblem = hit.collider.GetComponent<EnemyProblem>();
+            EnemyAttackCheck enemyAttackCheck = hit.collider.GetComponent<EnemyAttackCheck>();
+
+
+            //SUCCESFUL KILL
             if (enemyProblem != null && calculatorUI.enteredValue == enemyProblem.answer.ToString())
             {
                 calculatorUI.storedInputField.text = "<color=green>!</color>";//green check if correct ( \u2713 )
                 delayBeforeClearingText = 2f;
+
                 Destroy(hit.collider.gameObject);
-            }
+  
+                scoreKeeper.kills++; //log kills
+                scoreKeeper.AddScore(enemyAttackCheck.damage / 2,true); //log score (scales with enemy damage)
+
+                //add some health back to be nice, and it scales with your multiplier and the enemies damage! adds to the fun
+                playerHealth.AddHealth(enemyAttackCheck.damage / 2 * scoreKeeper.multiplier / 2);
+
+            }//FAILED KILL
             else if (enemyProblem != null && calculatorUI.enteredValue != enemyProblem.answer.ToString())
             {
                 calculatorUI.storedInputField.text = "<color=red>×</color>";//red check if false
                 delayBeforeClearingText = 2f;
+
+                scoreKeeper.AddScore(0,false);//log score
             }
         }
     }

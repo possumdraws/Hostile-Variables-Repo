@@ -24,14 +24,19 @@ public class SpawnEnemies_Random : MonoBehaviour
     [SerializeField]
     private TrackSpotOccupation track;
 
+    private CountAllEnemies countEnemies;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //get location of this spawner in the world
         spawnerPosition = transform;
+
+        //acquire enemy counter and add enemies
+        countEnemies = FindFirstObjectByType<CountAllEnemies>();
+        countEnemies.GetEnemyCountInSpawner(maxSpawned);
     }
 
-    // Update is called every frame
     void FixedUpdate()
     {
         //if the in game enemy exists, we cannot spawn another one.
