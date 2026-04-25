@@ -18,7 +18,7 @@ public class SpawnEnemies_Random : MonoBehaviour
     private int spawned = 0;
 
     [Header("How Many Can Spawn Before it Stops")]
-    public int maxSpawned = 5;
+    public int maxSpawned;
 
     //reference to the correct board for this spawner
     [SerializeField]

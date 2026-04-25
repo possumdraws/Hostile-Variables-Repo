@@ -53,5 +53,5 @@ MonoBehaviour:
   - {fileID: 555397192759081915, guid: 228f8cbe8240c0f4a829d74879e1bea6, type: 3}
   spawnDelay: 0
   spawned: 0
-  maxSpawned: 5
+  maxSpawned: 1
   track: {fileID: 0}
