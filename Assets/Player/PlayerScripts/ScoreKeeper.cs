@@ -10,7 +10,10 @@ public class ScoreKeeper : MonoBehaviour
     public int multiplier;
     public TMP_Text multiplierText;
     public int consec_Kills; //consecutive
-    //something to store the streak hmm color?
+
+    //keep streak if there are kills within 10 seconds
+    public float streakTimer = 0f;
+    public float streakWearOffTimer = 15f;
 
     public int kills = 0;
     public TMP_Text killsText;
@@ -27,10 +30,31 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        //count down timer
+        if (consec_Kills > 0)
+        {
+            streakTimer -= Time.deltaTime;
+
+            //streak text flashes when it's about to run out
+            if (streakTimer < 3f)
+            {
+                float t = Mathf.PingPong(Time.time * 5f, 1f);
+                multiplierText.color = Color.Lerp(Color.red, Color.white, t);
+            }
+
+            if (streakTimer <= 0f)
+            {
+                // streak expired
+                consec_Kills = 0;
+                multiplier = 1;
+                UpdateScoreText();
+            }
+        }
+
+        /*if (Input.GetKeyDown(KeyCode.W))
         {
             AddScore(1, true);
-        }
+        }*/
     }
 
     public void AddScore(int point, bool streakIncreased)
@@ -41,10 +65,12 @@ public class ScoreKeeper : MonoBehaviour
         if (streakIncreased)
         {
             consec_Kills += 1;
+            streakTimer = streakWearOffTimer; //reset streak
         }
         else
         {
             consec_Kills = 0;
+            streakTimer = 0f;//kill the streak
         }
 
         UpdateScoreText();//update
