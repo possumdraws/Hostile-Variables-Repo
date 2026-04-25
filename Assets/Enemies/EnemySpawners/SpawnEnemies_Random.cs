@@ -18,20 +18,25 @@ public class SpawnEnemies_Random : MonoBehaviour
     private int spawned = 0;
 
     [Header("How Many Can Spawn Before it Stops")]
-    public int maxSpawned = 5;
+    public int maxSpawned;
 
     //reference to the correct board for this spawner
     [SerializeField]
     private TrackSpotOccupation track;
+
+    private CountAllEnemies countEnemies;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         //get location of this spawner in the world
         spawnerPosition = transform;
+
+        //acquire enemy counter and add enemies
+        countEnemies = FindFirstObjectByType<CountAllEnemies>();
+        countEnemies.GetEnemyCountInSpawner(maxSpawned);
     }
 
-    // Update is called every frame
     void FixedUpdate()
     {
         //if the in game enemy exists, we cannot spawn another one.
