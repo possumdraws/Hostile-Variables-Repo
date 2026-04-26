@@ -64,7 +64,7 @@ public class SpawnEnemies_Random : MonoBehaviour
         {
             if (basicEnemies.Length == 0)
             {
-                Debug.LogError("Basic enemy array is empty!");
+                Debug.LogError("Basic enemy array is empty in: " + gameObject.name);
                 canSpawn = false;
                 yield break;
             }
@@ -75,7 +75,7 @@ public class SpawnEnemies_Random : MonoBehaviour
             //check that enemy prefab exists
             if (basicEnemies[pickEnemy] == null)
             {
-                Debug.LogError("Enemy prefab is missing");
+                Debug.LogError("Enemy prefab is missing in: " + gameObject.name);
                 canSpawn = false;
                 yield break;
             }
@@ -87,7 +87,7 @@ public class SpawnEnemies_Random : MonoBehaviour
         {
             if (heavyEnemies.Length == 0)
             {
-                Debug.LogError("Heavy enemy array is empty!");
+                Debug.LogError("Heavy enemy array is empty in: " + gameObject.name);
                 canSpawn = false;
                 yield break;
             }
@@ -98,7 +98,7 @@ public class SpawnEnemies_Random : MonoBehaviour
             //check that enemy prefab exists
             if (heavyEnemies[pickEnemy] == null)
             {
-                Debug.LogError("Enemy prefab is missing");
+                Debug.LogError("Enemy prefab is missing in: " + gameObject.name);
                 canSpawn = false;
                 yield break;
             }
@@ -115,7 +115,7 @@ public class SpawnEnemies_Random : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Spawned enemy missing EnemyMovement script!");
+            Debug.LogError("Spawned enemy missing EnemyMovement script in: " + gameObject.name);
         }
 
         //add so it stops spawning enemies eventually
