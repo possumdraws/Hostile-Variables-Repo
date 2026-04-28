@@ -7,6 +7,7 @@ public class PauseMenuButtons : MonoBehaviour
 {
     public AudioSource pauseMenuButtonSound;
     public CheckIsPaused pauseCheck;
+    
     public void ResumeButton()
     {
         pauseMenuButtonSound.Play();
@@ -36,5 +37,19 @@ public class PauseMenuButtons : MonoBehaviour
     {
         pauseMenuButtonSound.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    //======NEXT LEVEL BUTTON====//
+    public void NextLevelButton()
+    {
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        else
+        {
+            Debug.Log("No more scenes to load!");
+        }
     }
 }

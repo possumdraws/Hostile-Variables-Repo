@@ -10,6 +10,7 @@ public class CheckIsPaused : MonoBehaviour
     public GameObject UICanvas;//player UI
     public GameObject GameOverCanvas; //game over canvas
     public GameObject ControlsCanvas;
+    public GameObject NextLevelCanvas;
 
     [Header("Health Stuff")]
     public bool isAlive;
@@ -40,6 +41,10 @@ public class CheckIsPaused : MonoBehaviour
         {
             ControlsCanvas.SetActive(false);
         }
+        if(NextLevelCanvas != null)
+        {
+            NextLevelCanvas.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -66,7 +71,7 @@ public class CheckIsPaused : MonoBehaviour
     }
 
     //Pause
-    void PauseGame()
+    public void PauseGame()
     {
         Time.timeScale = 0f;
         //AudioListener.pause = true;
