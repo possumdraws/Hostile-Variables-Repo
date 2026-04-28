@@ -16,6 +16,9 @@ public class CalcLogic : MonoBehaviour
     private ScoreKeeper scoreKeeper;
     private PlayerHealth playerHealth;
 
+    public GameObject leftArrow;
+    public GameObject rightArrow;
+
     float delayBeforeClearingText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,10 +57,8 @@ public class CalcLogic : MonoBehaviour
         }
 
         
-        if (Input.GetMouseButtonDown(0) && canBlast && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(0) && canBlast)
         {
-            laserBlast.Play();
-
             Blast();
         }
     }
@@ -74,6 +75,8 @@ public class CalcLogic : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(ray, out RaycastHit hit) && hit.collider.CompareTag("enemy"))
         {
+            laserBlast.Play();
+
             EnemyProblem enemyProblem = hit.collider.GetComponent<EnemyProblem>();
             EnemyAttackCheck enemyAttackCheck = hit.collider.GetComponent<EnemyAttackCheck>();
 

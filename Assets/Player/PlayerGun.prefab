@@ -6814,6 +6814,14 @@ PrefabInstance:
       propertyPath: rotationButtons
       value: 
       objectReference: {fileID: 1039010843694293156}
+    - target: {fileID: 7333782334216586994, guid: 5989314372a24744a82781a5e64104c7, type: 3}
+      propertyPath: leftArrow
+      value: 
+      objectReference: {fileID: 5662048584369323061}
+    - target: {fileID: 7333782334216586994, guid: 5989314372a24744a82781a5e64104c7, type: 3}
+      propertyPath: rightArrow
+      value: 
+      objectReference: {fileID: 5668549264361313790}
     - target: {fileID: 7554713294401808796, guid: 5989314372a24744a82781a5e64104c7, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
