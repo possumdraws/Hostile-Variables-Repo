@@ -79,6 +79,7 @@ public class PullUpCalculatorGun : MonoBehaviour
         //flip to true, and then back on another press
         calcUp = !calcUp;
         rotationButtons.gameObject.SetActive(!calcUp);
+        Debug.Log("Calculator ADS Flipped");
     }
     void MoveCalcPos(bool rc)
     {

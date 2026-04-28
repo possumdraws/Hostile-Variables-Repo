@@ -17,11 +17,12 @@ public class CalculatorUI : MonoBehaviour
     //SFX
     public AudioSource ButtonClick;
 
-    PullUpCalculator pullUpCalculator;
+    PullUpCalculatorGun pullUpCalculatorGun;
     CalcLogic calcLogic;
 
     void Start()
     {
+        pullUpCalculatorGun = GameObject.FindFirstObjectByType<PullUpCalculatorGun>();
         calcLogic = GameObject.FindFirstObjectByType<CalcLogic>();
 
         if (inputField == null)
@@ -69,6 +70,8 @@ public class CalculatorUI : MonoBehaviour
         ButtonClick.Play();
         string value = inputField.text.Trim();
 
+        pullUpCalculatorGun.FlipCalc();
+
         if (string.IsNullOrEmpty(value))
         {
             Debug.Log("No input to process.");
@@ -83,6 +86,7 @@ public class CalculatorUI : MonoBehaviour
 
         //put the entered value on the right before clearing
         storedInputField.text = inputField.text;
+
 
         //clear after enter
         inputField.text = "";
