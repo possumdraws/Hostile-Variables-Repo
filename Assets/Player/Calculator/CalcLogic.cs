@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.EventSystems;
 public class CalcLogic : MonoBehaviour
 {
     //so we can't shoot while using the menu
@@ -53,7 +54,7 @@ public class CalcLogic : MonoBehaviour
         }
 
         
-        if (Input.GetMouseButtonDown(0) && canBlast)
+        if (Input.GetMouseButtonDown(0) && canBlast && !EventSystem.current.IsPointerOverGameObject())
         {
             laserBlast.Play();
 
