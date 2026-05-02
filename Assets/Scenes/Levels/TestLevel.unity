@@ -1488,9 +1488,49 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3038928606297243200, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.0382
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038928606297243200, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.036
+      objectReference: {fileID: 0}
+    - target: {fileID: 3038928606297243200, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.1832
+      objectReference: {fileID: 0}
     - target: {fileID: 5954422110786135537, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
       propertyPath: m_Name
       value: PlayerGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292086109959364780, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_Range
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292086109959364780, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292086109959364780, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_Color.g
+      value: 0.8918469
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292086109959364780, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292086109959364780, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_Intensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292086109959364780, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_Lightmapping
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292086109959364780, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_BounceIntensity
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8998392933064368530, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
       propertyPath: m_LocalPosition.x
