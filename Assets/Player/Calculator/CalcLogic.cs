@@ -15,9 +15,12 @@ public class CalcLogic : MonoBehaviour
     private PullUpCalculator pullUpCalculator;
     private ScoreKeeper scoreKeeper;
     private PlayerHealth playerHealth;
+    private ProjectileBeam projectileBeam;
+
 
     public GameObject leftArrow;
     public GameObject rightArrow;
+
 
     float delayBeforeClearingText;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -28,6 +31,7 @@ public class CalcLogic : MonoBehaviour
         pullUpCalculator = GameObject.FindFirstObjectByType<PullUpCalculator>();
         scoreKeeper = GameObject.FindFirstObjectByType<ScoreKeeper>();
         playerHealth = GameObject.FindFirstObjectByType<PlayerHealth>();
+        projectileBeam = GameObject.FindFirstObjectByType<ProjectileBeam>();
     }
 
     // Update is called once per frame
@@ -86,6 +90,9 @@ public class CalcLogic : MonoBehaviour
             {
                 calculatorUI.storedInputField.text = "<color=green>!</color>";//green check if correct ( \u2713 )
                 delayBeforeClearingText = 2f;
+
+                //shoot beam
+                projectileBeam.ShootBeam();
 
                 Destroy(hit.collider.gameObject);
   
