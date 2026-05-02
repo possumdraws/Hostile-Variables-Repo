@@ -151,6 +151,10 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5155713809291438320, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
+      propertyPath: m_RenderPostProcessing
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5954422110786135537, guid: 99a70b9ef0f85f04b9cf5282c05866c0, type: 3}
       propertyPath: m_Name
       value: PlayerGun
