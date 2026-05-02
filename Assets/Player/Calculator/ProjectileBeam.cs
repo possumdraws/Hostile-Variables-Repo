@@ -5,9 +5,11 @@ public class ProjectileBeam : MonoBehaviour
 {
     CalcLogic calcLogic;
 
-    public GameObject beam;          // object that has the LineRenderer
+    public GameObject beam;
     public Camera fpCam;
     public Transform attackPoint;
+    public Light beamBlastLight;
+
 
     private LineRenderer lineRenderer;
 
