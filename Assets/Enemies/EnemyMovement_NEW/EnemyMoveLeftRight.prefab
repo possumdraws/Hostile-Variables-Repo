@@ -379,7 +379,7 @@ PrefabInstance:
     - target: {fileID: 7836952957742964153, guid: ca874fe51925ea1458046d4cdcc8efbf, type: 3}
       propertyPath: 'basicEnemies.Array.data[0]'
       value: 
-      objectReference: {fileID: 9194902376921693633, guid: 90336f5f2d3fc244799e19118166b6b8, type: 3}
+      objectReference: {fileID: 9194902376921693633, guid: e68965993c664314183659f98725e881, type: 3}
     - target: {fileID: 7836952957742964153, guid: ca874fe51925ea1458046d4cdcc8efbf, type: 3}
       propertyPath: 'basicEnemies.Array.data[1]'
       value: 
@@ -387,7 +387,7 @@ PrefabInstance:
     - target: {fileID: 7836952957742964153, guid: ca874fe51925ea1458046d4cdcc8efbf, type: 3}
       propertyPath: 'heavyEnemies.Array.data[0]'
       value: 
-      objectReference: {fileID: 9194902376921693633, guid: 90336f5f2d3fc244799e19118166b6b8, type: 3}
+      objectReference: {fileID: 9194902376921693633, guid: e68965993c664314183659f98725e881, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
