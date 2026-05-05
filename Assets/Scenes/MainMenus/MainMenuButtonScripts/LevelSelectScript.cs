@@ -7,25 +7,30 @@ public class LevelSelectScript : MonoBehaviour
     //we will adjust these later.
     public AudioSource menuButtonClick;
 
-    public void LevelOne()
+    private void OnEnable()
     {
-        menuButtonClick.Play();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        Time.timeScale = 1.0f;
     }
-    public void LevelTwo()
+
+    public void LevelOne()
     {
         menuButtonClick.Play();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
+    public void LevelTwo()
+    {
+        menuButtonClick.Play();
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+    }
     public void LevelThree()
     {
         menuButtonClick.Play();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 3);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 5);
     }
 
     public void DevLevelSecret()
     {
         menuButtonClick.Play();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 4);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 }

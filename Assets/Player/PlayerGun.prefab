@@ -6254,7 +6254,7 @@ MonoBehaviour:
     m_Bits: 1
   m_VolumeTrigger: {fileID: 0}
   m_VolumeFrameworkUpdateModeOption: 2
-  m_RenderPostProcessing: 0
+  m_RenderPostProcessing: 1
   m_Antialiasing: 0
   m_AntialiasingQuality: 2
   m_StopNaN: 0
@@ -7178,6 +7178,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0.03075
       objectReference: {fileID: 0}
+    - target: {fileID: 5768517384177075488, guid: 4cefb1384f51132439ca8f8153c79b09, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 4b71b8cfcc55bb84793657774eb855c2, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
