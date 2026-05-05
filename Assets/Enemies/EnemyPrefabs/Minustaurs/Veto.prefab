@@ -635,11 +635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cb4af6b059a3f047b798c4200cff7c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyProblem
-  a: 0
-  b: 0
-  c: 0
-  answer: 0
-  operationTypeNum: 0
+  a: 1
+  b: 1
+  c: 1
+  answer: 1
+  operationTypeNum: 1
   enemyIsHeavy: 0
   problemText: {fileID: 8104468982763551682}
 --- !u!114 &8213175150980624269
