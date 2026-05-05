@@ -10,7 +10,7 @@ public class MainMenuButtons : MonoBehaviour
         //qquit editor play mode
         menuButtonClick.Play();
 
-        EditorApplication.isPlaying = false;    
+        //EditorApplication.isPlaying = false;    
         
         Application.Quit();
     }

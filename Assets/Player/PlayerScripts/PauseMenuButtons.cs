@@ -28,7 +28,7 @@ public class PauseMenuButtons : MonoBehaviour
     {
         pauseMenuButtonSound.Play();
         //qquit editor play mode
-        EditorApplication.isPlaying = false;
+        //EditorApplication.isPlaying = false;
         //close built application
         Application.Quit();
     }
