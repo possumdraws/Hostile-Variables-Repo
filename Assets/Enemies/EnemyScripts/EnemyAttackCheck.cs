@@ -63,11 +63,18 @@ public class EnemyAttackCheck : MonoBehaviour
             //% chance of attacking
             attackChance = Random.value < 0.3f;
 
-            //attackChance = true && timer hit 0 && enemy is not moving && in range
-            if (attackChance && !enemyMovement.isMoving && enemyMovement.currentRow >= range)
+            //attackChance = true && enemy is not moving && in range
+            if (attackChance && !enemyMovement.isMoving && enemyMovement.currentRow >= range && enemyMovement.BackAndForth == false)
             {
                 Attack();
             }
+
+            //back and forth attack
+            if(attackChance && !enemyMovement.isMoving && enemyMovement.BackAndForth == true)
+            {
+                Attack();
+            }
+
             //reset timer
             delay = baseTimerDelay;
         }

@@ -12,6 +12,10 @@ public class EnemyMovement : MonoBehaviour
     public float moveSpeed = 3f; // speed to move toward next point
     public float moveCheckDelay = 15f; // wait time before checking next spot
 
+    [Header("Back and Forth Movement?")]
+    public bool BackAndForth;
+    private int direction = 1;
+
     [SerializeField]
     private TrackSpotOccupation track;
     private Transform targetPoint;
@@ -36,7 +40,7 @@ public class EnemyMovement : MonoBehaviour
         //safety check so enemy doesn't run without a track
         if (track == null)
         {
-            Debug.LogError("TrackSpotOccupation not assigned to enemy!");
+            Debug.Log("TrackSpotOccupation not assigned to enemy!");
             Destroy(gameObject);
             return;
         }
@@ -93,7 +97,14 @@ public class EnemyMovement : MonoBehaviour
                 transform.position = targetPoint.position;
 
                 // update current row
-                currentRow = Mathf.Min(currentRow + 1, track.Rows.Length - 1);
+                if (BackAndForth)
+                {
+                    currentRow += direction;
+                }
+                else
+                {
+                    currentRow = Mathf.Min(currentRow + 1, track.Rows.Length - 1);
+                }
 
                 // finished moving, restart idle timer
                 isMoving = false;
@@ -111,14 +122,30 @@ public class EnemyMovement : MonoBehaviour
             return; //stay idle until timer finishes
         }
 
-        // check for next point after idle
-        int nextRow = currentRow + 1;
+        int nextRow = currentRow + direction;
 
-        if (nextRow >= track.Rows.Length)
+        //original behavior
+        if (!BackAndForth)
         {
-            // no more rows, reset timer to keep checking (optional)
-            idleTimer = moveCheckDelay;
-            return;
+            if (nextRow >= track.Rows.Length)
+            {
+                idleTimer = moveCheckDelay;
+                return;
+            }
+        }
+        else
+        {
+            // reverse direction at ends
+            if (nextRow >= track.Rows.Length)
+            {
+                direction = -1;
+                nextRow = currentRow + direction;
+            }
+            else if (nextRow < 0)
+            {
+                direction = 1;
+                nextRow = currentRow + direction;
+            }
         }
 
         // pick a random free spot in the next row

@@ -18,7 +18,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2685181901708281240
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2964,7 +2964,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &8039942319022705181
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7330,6 +7330,7 @@ MonoBehaviour:
   beam: {fileID: 8277887899592150726}
   fpCam: {fileID: 5062557917960623360}
   attackPoint: {fileID: 8433371603677809793}
+  beamBlastLight: {fileID: 0}
 --- !u!4 &8767144544727831676 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 4cefb1384f51132439ca8f8153c79b09, type: 3}
