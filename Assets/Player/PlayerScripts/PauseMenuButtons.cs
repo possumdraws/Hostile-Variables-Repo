@@ -49,6 +49,8 @@ public class PauseMenuButtons : MonoBehaviour
         }
         else
         {
+            //go to main menu
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - SceneManager.GetActiveScene().buildIndex);
             Debug.Log("No more scenes to load!");
         }
     }
