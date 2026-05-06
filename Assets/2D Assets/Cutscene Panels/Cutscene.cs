@@ -7,11 +7,11 @@ using UnityEngine.SceneManagement;
 public class Cutscene : MonoBehaviour
 {
     [Header("Slideshow Settings")]
-    public Image displayImage;        // UI Image to show slides
-    public Sprite[] slides;           //array of slide images
-    public float slideDuration = 3f;  // time each slide is shown (if autoAdvance is true)
-    public float fadeDuration = 1f;   //fade in/out time
-    public bool autoAdvance = true;   // automatically go to next slide
+    public Image displayImage;// UI Image to show slides
+    public Sprite[] slides;//array of slide images
+    public float slideDuration = 3f;// time each slide is shown (if autoAdvance is true)
+    public float fadeDuration = 1f;//fade in/out time
+    public bool autoAdvance = true;// automatically go to next slide
     public KeyCode nextKey = KeyCode.Space; //key to advance manually
 
     [Header("Events")]
@@ -20,7 +20,7 @@ public class Cutscene : MonoBehaviour
     private int currentSlideIndex = 0;
     private bool isPlaying = false;
 
-    void Start()
+    public void Start()
     {
         if (displayImage == null || slides.Length == 0)
         {
@@ -59,7 +59,17 @@ public class Cutscene : MonoBehaviour
         }
 
         isPlaying = false;
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        if (currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings)
+        {
+            SceneManager.LoadScene(currentSceneIndex + 1);
+        }
+        else
+        {
+            SceneManager.LoadScene(0); // fallback to main menu
+        }
     }
 
     private IEnumerator FadeImage(float startAlpha, float endAlpha)

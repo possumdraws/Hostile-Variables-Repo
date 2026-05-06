@@ -458,7 +458,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &3812418204552073776
 RectTransform:
   m_ObjectHideFlags: 0
@@ -500,7 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 0.43529412}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.4627451}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1396,7 +1396,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3655293211961187087
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2704,6 +2704,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LevelComplete
   scoreKeeper: {fileID: 8732680348786384491}
   countAllEnemies: {fileID: 3124702457264363583}
+  LevelCompleteCanvas: {fileID: 0}
+  delayMenuPopup: 0
 --- !u!1 &4800500810221883976
 GameObject:
   m_ObjectHideFlags: 0
@@ -3340,7 +3342,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3950821594478343887
 RectTransform:
   m_ObjectHideFlags: 0
