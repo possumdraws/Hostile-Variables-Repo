@@ -18,6 +18,7 @@ public class EnemyAttackCheck : MonoBehaviour
     [Header("Attack Attributes")]
     public Animator animator;
     public AudioSource AttackSound;
+    public bool isAccrumist;
 
     bool attackChance;
 
@@ -137,6 +138,10 @@ public class EnemyAttackCheck : MonoBehaviour
     //animator func when the time comes
     void PlayAttackAnimation()
     {
+        if (isAccrumist)
+        {
+            GetComponent<AccrumistThrow>().SpawnProjectile();
+        }
         animator.SetTrigger("triggerAttack");
     }
 
