@@ -45,7 +45,16 @@ public class Cutscene : MonoBehaviour
             //wait for duration or key press
             if (autoAdvance)
             {
-                yield return new WaitForSeconds(slideDuration);
+                float timer = 0f;
+
+                while (timer < slideDuration)
+                {
+                    if (Input.GetKeyDown(nextKey))
+                        break;
+
+                    timer += Time.deltaTime;
+                    yield return null;
+                }
             }
             else
             {
