@@ -762,6 +762,13 @@ MonoBehaviour:
   fadeDuration: 3
   autoAdvance: 1
   nextKey: 32
+  displayText: {fileID: 1467992026}
+  slideTexts:
+  - 'YOU WIN!!
+
+
+    THE AXOLOTLS HAVE BEEN FREED!'
+  - 
   onSlideshowEnd:
     m_PersistentCalls:
       m_Calls: []

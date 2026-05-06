@@ -1,6 +1,7 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
-public class AccrumistThrow : MonoBehaviour
+public class EnemyThrowObject : MonoBehaviour
 {
     public GameObject potionPrefab;
     public Transform player;
@@ -28,26 +29,26 @@ public class AccrumistThrow : MonoBehaviour
 
         ProjectileMover mover = potion.AddComponent<ProjectileMover>();
         mover.Initialize(player, projectileSpeed, destroyDistance);
-        Debug.Log("Potion thrown");
+        Debug.Log("Throwable thrown");
     }
 }
 
 public class ProjectileMover : MonoBehaviour
 {
-    private Transform target;
+    private Transform playerTarget;
     private float speed;
     private float destroyDistance;
 
     public void Initialize(Transform targetTransform, float moveSpeed, float dist)
     {
-        target = targetTransform;
+        playerTarget = targetTransform;
         speed = moveSpeed;
         destroyDistance = dist;
     }
 
     void Update()
     {
-        if (target == null)
+        if (playerTarget == null)
         {
             Destroy(gameObject);
             return;
@@ -55,13 +56,16 @@ public class ProjectileMover : MonoBehaviour
 
         transform.position = Vector3.MoveTowards(
             transform.position,
-            target.position,
+            playerTarget.position,
             speed * Time.deltaTime
         );
 
-        transform.LookAt(target);
+        //spin
+        transform.Rotate(0f, 0f, 360f * Time.deltaTime);
 
-        if (Vector3.Distance(transform.position, target.position) < destroyDistance)
+        //transform.LookAt(playerTarget);
+
+        if (Vector3.Distance(transform.position, playerTarget.position) < destroyDistance)
         {
             Destroy(gameObject);
         }

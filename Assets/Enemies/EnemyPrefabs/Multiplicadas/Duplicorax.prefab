@@ -640,7 +640,7 @@ MonoBehaviour:
   c: 2
   answer: 2
   operationTypeNum: 2
-  enemyIsHeavy: 0
+  enemyIsHeavy: 1
   problemText: {fileID: 3509553106249510365}
 --- !u!114 &8213175150980624269
 MonoBehaviour:
@@ -705,7 +705,7 @@ MonoBehaviour:
   range: 0
   animator: {fileID: 2842423425431057283}
   AttackSound: {fileID: -34254134714629008}
-  isAccrumist: 0
+  throwsAnObject: 0
 --- !u!1001 &7710117206289359319
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -30,6 +30,11 @@ public class ScoreKeeper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            kills++;
+        }
+
         //count down timer
         if (consec_Kills > 0)
         {
