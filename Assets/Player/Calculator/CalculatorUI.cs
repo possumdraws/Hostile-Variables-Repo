@@ -53,7 +53,7 @@ public class CalculatorUI : MonoBehaviour
     }
 
     //append a number to the input field text
-    private void AppendNumber(int number)
+    public void AppendNumber(int number)
     {
         //make sure that someone cant enter 1476532413247564321574641534534534...
         if (inputField.text.Length < 4) 
@@ -93,7 +93,7 @@ public class CalculatorUI : MonoBehaviour
     }
 
     //deletes the last character from the input field
-    private void OnDeletePressed()
+    public void OnDeletePressed()
     {
         ButtonClick.Play();
         if (!string.IsNullOrEmpty(inputField.text))
