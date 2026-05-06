@@ -705,6 +705,7 @@ MonoBehaviour:
   range: 0
   animator: {fileID: 2842423425431057283}
   AttackSound: {fileID: -4281127495755835481}
+  throwsAnObject: 0
 --- !u!1001 &2153047105393798429
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -755,7 +756,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447373339171841048, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 850
+      value: 1174.904
       objectReference: {fileID: 0}
     - target: {fileID: 447373339171841048, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_SizeDelta.y
@@ -803,7 +804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 447373339171841048, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -0.0194
       objectReference: {fileID: 0}
     - target: {fileID: 447373339171841048, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -851,6 +852,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6224643876568152164, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506497820116110346, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_fontSize
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506497820116110346, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 35
+      objectReference: {fileID: 0}
+    - target: {fileID: 6506497820116110346, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8527811820587130292, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}

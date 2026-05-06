@@ -121,7 +121,7 @@ public class CalcLogic : MonoBehaviour
 
                 Destroy(hit.collider.gameObject);
   
-                scoreKeeper.kills++; //log kills
+                scoreKeeper.kills+=1; //log kills
                 scoreKeeper.AddScore(enemyAttackCheck.damage / 2,true); //log score (scales with enemy damage)
 
                 //add some health back to be nice, and it scales with your multiplier and the enemies damage! adds to the fun

@@ -625,6 +625,7 @@ MonoBehaviour:
   currentIndex: 0
   moveSpeed: 2
   moveCheckDelay: 6
+  BackAndForth: 0
   track: {fileID: 0}
   isMoving: 0
 --- !u!114 &8362249546770075064
@@ -645,6 +646,7 @@ MonoBehaviour:
   range: 0
   animator: {fileID: 3906958842736412012}
   AttackSound: {fileID: 6943378064182643653}
+  isAccrumist: 1
 --- !u!1 &7308384075909818549
 GameObject:
   m_ObjectHideFlags: 0

@@ -647,7 +647,7 @@ MonoBehaviour:
   range: 0
   animator: {fileID: 3906958842736412012}
   AttackSound: {fileID: 6943378064182643653}
-  isAccrumist: 1
+  throwsAnObject: 1
 --- !u!114 &2343807530957174876
 MonoBehaviour:
   m_ObjectHideFlags: 0

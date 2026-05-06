@@ -144,8 +144,8 @@ public class EnemyProblem : MonoBehaviour
         if (!enemyIsHeavy)
         {
             //lower numbers to keep the multiplication fair
-            a = Random.Range(1, 11);
-            b = Random.Range(1, 11);
+            a = Random.Range(2, 11);
+            b = Random.Range(2, 11);
 
             //calculate
             answer = a * b;
