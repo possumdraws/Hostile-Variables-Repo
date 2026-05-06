@@ -348,8 +348,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchoredPosition: {x: -6.03, y: 2.127}
+  m_SizeDelta: {x: 117.2993, y: 115.5479}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &311882187
 MonoBehaviour:
@@ -407,11 +407,11 @@ PrefabInstance:
     - target: {fileID: 3298059016496677182, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
       propertyPath: LOOP_MUSIC
       value: 
-      objectReference: {fileID: 8300000, guid: 5f73368fac028844eb762b5e70c233b6, type: 3}
+      objectReference: {fileID: 8300000, guid: 9d284956abab421448695e0fce3e22ac, type: 3}
     - target: {fileID: 3298059016496677182, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
       propertyPath: INTRO_MUSIC
       value: 
-      objectReference: {fileID: 8300000, guid: 5f73368fac028844eb762b5e70c233b6, type: 3}
+      objectReference: {fileID: 8300000, guid: 9d284956abab421448695e0fce3e22ac, type: 3}
     - target: {fileID: 5729248365321632356, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 593.7883
@@ -491,8 +491,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 4.0061, y: -2.2382}
-  m_SizeDelta: {x: 1323.1746, y: 755.1832}
+  m_AnchoredPosition: {x: -1.3309, y: -0.4592}
+  m_SizeDelta: {x: 1552.0742, y: 872.5981}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &354617693
 MonoBehaviour:
@@ -803,15 +803,15 @@ RectTransform:
   m_GameObject: {fileID: 1079364460}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6641, y: 0.6641, z: 0.6641}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 246886575}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1288, y: 724}
+  m_AnchoredPosition: {x: -6.03, y: 89}
+  m_SizeDelta: {x: 1510.815, y: 836.5664}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
