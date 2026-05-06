@@ -516,11 +516,11 @@ PrefabInstance:
     - target: {fileID: 3298059016496677182, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
       propertyPath: LOOP_MUSIC
       value: 
-      objectReference: {fileID: 8300000, guid: 9d284956abab421448695e0fce3e22ac, type: 3}
+      objectReference: {fileID: 8300000, guid: 95db8c82118be4c43ad2a3aeb5e7d206, type: 3}
     - target: {fileID: 3298059016496677182, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
       propertyPath: INTRO_MUSIC
       value: 
-      objectReference: {fileID: 8300000, guid: 9d284956abab421448695e0fce3e22ac, type: 3}
+      objectReference: {fileID: 8300000, guid: 95db8c82118be4c43ad2a3aeb5e7d206, type: 3}
     - target: {fileID: 5729248365321632356, guid: 6ab975c3d5b4f5f40b37d1e05b91de85, type: 3}
       propertyPath: m_LocalPosition.x
       value: 593.7883
@@ -758,8 +758,8 @@ MonoBehaviour:
   slides:
   - {fileID: 21300000, guid: 2f4bb4f778ab6f04695101869b715dae, type: 3}
   - {fileID: 21300000, guid: 07ce3cc4341cd164a8fd7cab2284397f, type: 3}
-  slideDuration: 4
-  fadeDuration: 1
+  slideDuration: 15
+  fadeDuration: 3
   autoAdvance: 1
   nextKey: 32
   onSlideshowEnd:
