@@ -643,10 +643,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyAttackCheck
   EnemyType: 3
   baseTimerDelay: 3
-  damage: 0
+  damage: 1
   range: 0
   animator: {fileID: 3906958842736412012}
   AttackSound: {fileID: 6943378064182643653}
+  isAccrumist: 1
 --- !u!114 &2343807530957174876
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -661,7 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AccrumistThrow
   potionPrefab: {fileID: 3470074457766788138, guid: c75e5b6af3c3b364898b9c4a7a288b4b, type: 3}
   player: {fileID: 0}
-  projectileSpeed: 5
+  projectileSpeed: 10
   destroyDistance: 0.2
 --- !u!1 &7308384075909818549
 GameObject:

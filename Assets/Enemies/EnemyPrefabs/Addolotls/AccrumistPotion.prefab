@@ -10,8 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8681840827360352807}
   - component: {fileID: 2226989459870207431}
-  - component: {fileID: 4773599547977735229}
-  - component: {fileID: 7868520509788296610}
   m_Layer: 0
   m_Name: AccrumistPotion
   m_TagString: Untagged
@@ -93,31 +91,3 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!114 &4773599547977735229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3470074457766788138}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 00d85ae39392afe4ab9f59177109ad0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::AccrumistThrow
-  potionPrefab: {fileID: 0}
-  player: {fileID: 0}
-  projectileSpeed: 5
-  destroyDistance: 0.2
---- !u!114 &7868520509788296610
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3470074457766788138}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a5d4f0f3a40b659468fae36e32517741, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::LookAtPlayer

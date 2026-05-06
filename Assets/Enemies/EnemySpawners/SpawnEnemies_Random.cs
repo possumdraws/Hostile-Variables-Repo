@@ -54,7 +54,7 @@ public class SpawnEnemies_Random : MonoBehaviour
         //can spawn enabled when called
         canSpawn = true;
         //random value for picking type of enemy
-        pickEnemyType = (Random.value < 0.9f); //% basic
+        pickEnemyType = (Random.value < 0.75f); //% basic
 
         //wait for however many seconds we set this to (I did 3 for now)
         yield return new WaitForSeconds(spawnDelay);
