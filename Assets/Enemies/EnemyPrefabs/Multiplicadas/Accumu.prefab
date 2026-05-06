@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 7914217229799578327}
   - component: {fileID: 160756087566039765}
   m_Layer: 0
-  m_Name: Incre
+  m_Name: Accumu
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,7 +389,7 @@ Transform:
   m_GameObject: {fileID: 9194902376921693633}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.003, y: 0, z: -0}
   m_LocalScale: {x: 1.484599, y: 1.484599, z: 1.484599}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -446,7 +446,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1322094287, guid: f0a3f547823bafa43a009c63b8736a7d, type: 3}
+  m_Sprite: {fileID: -1486431689, guid: ee9b35425d8da834c9a8e550d1b6c3e3, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -466,7 +466,7 @@ Animator:
   m_GameObject: {fileID: 9194902376921693633}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d4cb82f073d5d674daf875a8c17d2271, type: 2}
+  m_Controller: {fileID: 9100000, guid: 89b886707cbe64d49a083d9a8ac0f199, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -524,8 +524,8 @@ BoxCollider:
   m_ProvidesContacts: 1
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.6572945, y: 0.92467475, z: 0.26029998}
-  m_Center: {x: 0.00069141993, y: 0.5214619, z: 0.03015006}
+  m_Size: {x: 0.6572945, y: 1.5358243, z: 0.26029998}
+  m_Center: {x: 0.00069141993, y: 0.21588695, z: 0.03015006}
 --- !u!82 &-34254134714629008
 AudioSource:
   m_ObjectHideFlags: 0

@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 7914217229799578327}
   - component: {fileID: 160756087566039765}
   m_Layer: 0
-  m_Name: Incre
+  m_Name: Doubleen
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -446,7 +446,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1322094287, guid: f0a3f547823bafa43a009c63b8736a7d, type: 3}
+  m_Sprite: {fileID: 214273326, guid: 31a63cff439649b4c82d57ec52d8422f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -466,7 +466,7 @@ Animator:
   m_GameObject: {fileID: 9194902376921693633}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: d4cb82f073d5d674daf875a8c17d2271, type: 2}
+  m_Controller: {fileID: 9100000, guid: a711682500800884b8872a82c3db686d, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
