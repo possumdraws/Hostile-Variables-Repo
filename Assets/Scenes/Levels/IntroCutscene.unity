@@ -209,7 +209,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 1, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 246886575}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &196596496
@@ -324,7 +325,7 @@ Canvas:
   m_GameObject: {fileID: 246886571}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 1
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -354,7 +355,7 @@ RectTransform:
   - {fileID: 1079364463}
   - {fileID: 311882186}
   - {fileID: 787417188}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 196596495}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -439,8 +440,9 @@ MonoBehaviour:
     over your planet. The evil space queen Vinculia is utilizing her alien army to
     conquer planets'
   - In my solar system, each planets species is tied to a form of math...
-  - This teleportation gun I created can lock onto their personal equation. When
-    solved, the mind control will be broken, and they will be teleported to safety.
+  - This teleportation gun I created can lock onto their personal equation, but requires
+    user input. When solved, the mind control will be broken, and they will be teleported
+    to safety.
   - Please, If you don't stop the inhabitants of this ship, your planet may be doomed."
     With the Addolotls wish in mind, you prepare yourself, and board the ship.
   onSlideshowEnd:
@@ -1022,6 +1024,5 @@ SceneRoots:
   m_Roots:
   - {fileID: 196596495}
   - {fileID: 501401803}
-  - {fileID: 246886575}
   - {fileID: 913273067}
   - {fileID: 342082543}
