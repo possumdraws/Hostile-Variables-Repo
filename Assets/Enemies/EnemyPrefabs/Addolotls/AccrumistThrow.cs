@@ -9,7 +9,7 @@ public class AccrumistThrow : MonoBehaviour
     void Start()
     {
         // Automatically find player by tag
-        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        GameObject playerObj = GameObject.FindGameObjectWithTag("player");
 
         if (playerObj != null)
         {
@@ -23,7 +23,8 @@ public class AccrumistThrow : MonoBehaviour
 
     public void SpawnProjectile()
     {
-        GameObject potion = Instantiate(potionPrefab, transform.position, Quaternion.identity);
+        Vector3 spawnPos = transform.position + Vector3.up * 1f;
+        GameObject potion = Instantiate(potionPrefab, spawnPos, Quaternion.identity);
 
         ProjectileMover mover = potion.AddComponent<ProjectileMover>();
         mover.Initialize(player, projectileSpeed, destroyDistance);

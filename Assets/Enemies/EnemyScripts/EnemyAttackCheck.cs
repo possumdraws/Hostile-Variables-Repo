@@ -138,11 +138,11 @@ public class EnemyAttackCheck : MonoBehaviour
     //animator func when the time comes
     void PlayAttackAnimation()
     {
+        animator.SetTrigger("triggerAttack");
         if (isAccrumist)
         {
             GetComponent<AccrumistThrow>().SpawnProjectile();
         }
-        animator.SetTrigger("triggerAttack");
     }
 
 }
