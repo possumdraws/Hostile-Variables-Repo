@@ -39,7 +39,8 @@ public class EnemyProblem : MonoBehaviour
                 break;
             case 2://multiplication
                 GenerateMultiProblem();
-                operationTypeSymbol = "×";
+                //operationTypeSymbol = "×";
+                operationTypeSymbol = "*";
                 break;
             case 3://division
                 GenerateDivProblem();
@@ -55,13 +56,13 @@ public class EnemyProblem : MonoBehaviour
         //if TMP text exists (assigned in inspector)
         if (!enemyIsHeavy  && problemText != null)
         {
-            problemText.text = $"{a} {operationTypeSymbol} {b} = {answer}?";
-            //problemText.text = $"{a} {operationTypeSymbol} {b} = ?";
+            //problemText.text = $"{a} {operationTypeSymbol} {b} = {answer}?";
+            problemText.text = $"{a} {operationTypeSymbol} {b} = ?";
         }
         if (enemyIsHeavy && problemText != null)
         {
-            problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = {answer}?";
-            //problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = ?";
+            //problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = {answer}?";
+            problemText.text = $"{a} {operationTypeSymbol} {b} {operationTypeSymbol} {c} = ?";
         }
     }
 

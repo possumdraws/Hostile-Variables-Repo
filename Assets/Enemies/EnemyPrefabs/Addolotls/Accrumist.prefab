@@ -662,7 +662,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::AccrumistThrow
   potionPrefab: {fileID: 3470074457766788138, guid: c75e5b6af3c3b364898b9c4a7a288b4b, type: 3}
   player: {fileID: 0}
-  projectileSpeed: 10
+  projectileSpeed: 15
   destroyDistance: 0.2
 --- !u!1 &7308384075909818549
 GameObject:
