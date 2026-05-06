@@ -698,6 +698,7 @@ MonoBehaviour:
   currentIndex: 0
   moveSpeed: 2
   moveCheckDelay: 6
+  BackAndForth: 0
   track: {fileID: 0}
   isMoving: 0
 --- !u!114 &4592921871442335236
@@ -718,6 +719,7 @@ MonoBehaviour:
   range: 0
   animator: {fileID: 2842423425431057283}
   AttackSound: {fileID: 768835536455110823}
+  throwsAnObject: 0
 --- !u!1001 &1553976444493883047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -732,6 +734,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 420547476544645658, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 420547476544645658, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_SizeDelta.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 420547476544645658, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
@@ -829,6 +835,34 @@ PrefabInstance:
     - target: {fileID: 2981650535187398551, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_Name
       value: Canvas (Enemy)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471741545775861675, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_Type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471741545775861675, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 88bf37a5f90f0d94491593652ea98fed, type: 3}
+    - target: {fileID: 4471741545775861675, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471741545775861675, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_Color.b
+      value: 0.24663988
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471741545775861675, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_Color.g
+      value: 0.7264151
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471741545775861675, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_Color.r
+      value: 0.065103225
+      objectReference: {fileID: 0}
+    - target: {fileID: 4471741545775861675, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
+      propertyPath: m_FillOrigin
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6224643876568152164, guid: f074d7f42ca31fa438d4fb3739ea7337, type: 3}
       propertyPath: m_AnchorMax.y
