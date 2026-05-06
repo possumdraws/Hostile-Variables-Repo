@@ -11,7 +11,7 @@ public class CalcLogic : MonoBehaviour
 
     //OOP Refs
     private DetectEnemy detectEnemy;
-    private CalculatorUI calculatorUI;
+    public CalculatorUI calculatorUI;
     private PullUpCalculator pullUpCalculator;
     private ScoreKeeper scoreKeeper;
     private PlayerHealth playerHealth;
@@ -60,11 +60,36 @@ public class CalcLogic : MonoBehaviour
             canBlast = !canBlast;
         }
 
-        
+
         if (Input.GetMouseButtonDown(0) && canBlast)
         {
             Blast();
         }
+
+
+        //calculator controls on the keyboard
+        if (Input.anyKey)
+        {
+            //Number input
+            for (int i = 0; i <= 9; i++)
+            {
+                if (Input.GetKeyDown(KeyCode.Alpha0 + i) || Input.GetKeyDown(KeyCode.Keypad0 + i))
+                {
+                    calculatorUI.AppendNumber(i);
+                }
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            calculatorUI.OnEnterPressed();
+        }
+
+        if(Input.GetKeyDown(KeyCode.Backspace))
+        {
+            calculatorUI.OnDeletePressed();
+        }
+
     }
 
     public void FlipCalcAll()
