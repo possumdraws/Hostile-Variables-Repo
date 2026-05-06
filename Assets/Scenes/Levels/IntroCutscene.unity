@@ -420,21 +420,26 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fa73d5843aaa80c438fa365f43adf90f, type: 3}
   - {fileID: 21300000, guid: 3ee100f29c65793448a7ad88f8f708db, type: 3}
   - {fileID: 21300000, guid: 5ca61af91ac267f478519f146059e22f, type: 3}
-  slideDuration: 6
+  slideDuration: 10
   fadeDuration: 1
   autoAdvance: 1
   nextKey: 32
   displayText: {fileID: 787417189}
   slideTexts:
-  - 1
-  - 2
-  - 3
-  - 4
-  - 5
-  - 6
-  - 7
-  - 8
-  - 9
+  - During a lonely drive through midwest cornfields...
+  - a shooting star rapidly approaches, and crashes into a nearby clearing
+  - You step out to investigate...
+  - Upon investigation, you discover a crashed alien ship.
+  - A lone survivor emerges...
+  - After a dilemma of translation, he begins to speak. He explains that your planet
+    is in danger
+  - '"My people, the Addolotls, are being controlled! They have been ordered to take
+    over your planet. The evil space queen Vinculia is utilizing her alien army to
+    conquer planets'
+  - In my solar system, each planets species is tied to a form of math...
+  - This teleportation gun I created can lock onto their personal equation. When
+    solved, the mind control will be broken, and they will be teleported to safety.
+    Please, If you don't stop the inhabitants of this ship, your planet may be doomed.
   onSlideshowEnd:
     m_PersistentCalls:
       m_Calls:
@@ -774,7 +779,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 
+  m_text: '
+
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
@@ -801,10 +809,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
+  m_fontSize: 72
   m_fontSizeBase: 36
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -840,7 +848,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: -292.50912, y: 0, z: -188.6684, w: 0}
+  m_margin: {x: -301.2844, y: -36.56363, z: -312.98474, w: -7.312744}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
