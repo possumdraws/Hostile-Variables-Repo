@@ -6452,6 +6452,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ControlsMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6024182953717745026, guid: 22fbae71a37d69e44abc0311bae883c2, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7679391423554909777, guid: 22fbae71a37d69e44abc0311bae883c2, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -6518,11 +6522,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7707343834279776795, guid: 22fbae71a37d69e44abc0311bae883c2, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -51.50659
+      value: -39
       objectReference: {fileID: 0}
     - target: {fileID: 7707343834279776795, guid: 22fbae71a37d69e44abc0311bae883c2, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 6.042404
+      value: -305
       objectReference: {fileID: 0}
     - target: {fileID: 7707343834279776795, guid: 22fbae71a37d69e44abc0311bae883c2, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
