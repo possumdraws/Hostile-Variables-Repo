@@ -420,6 +420,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: fa73d5843aaa80c438fa365f43adf90f, type: 3}
   - {fileID: 21300000, guid: 3ee100f29c65793448a7ad88f8f708db, type: 3}
   - {fileID: 21300000, guid: 5ca61af91ac267f478519f146059e22f, type: 3}
+  - {fileID: 21300000, guid: 1cc74720b5839954797e45e4a9d027a1, type: 3}
   slideDuration: 6
   fadeDuration: 1
   autoAdvance: 1
